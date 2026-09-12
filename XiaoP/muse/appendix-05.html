@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Muse · 附录 05</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 05</div>
+        <h2>研发史：从 Hatch 到 Muse——九个月、内测、推迟上线</h2>
+        <div class="source">来源：InfoQ 中文编译 / THE ELEC / The Information · 2026-09</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 九个月重建技术栈</div>
+        <div class="tweet-body">
+            <p>2025 年 Meta 组建 Superintelligence Labs，Alexandr Wang 挂帅。</p>
+            <p>Muse 不是老产品迭代，是新实验室<span class="highlight">九个月推倒重来</span>的第一个作品。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🥚</span> Hatch 时期</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 代号 Hatch，灵感来自 OpenClaw</div>
+        <div class="tweet-body">
+            <p>项目内部代号 Hatch，2026 年 5 月被曝光。</p>
+            <p>直接承认受 <span class="highlight">OpenClaw</span> 启发——开源 Agent 框架先做出来了，Meta 跟进做成消费级产品。</p>
+            <p class="source-ref">📎 来源：09, 05</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 员工内测场景</div>
+        <div class="tweet-body">
+            <p>内测任务清单很生活：订餐厅、找宠物照看、订餐、填表。</p>
+            <p>还包括直接操作 <span class="highlight">Instagram、Spotify、OpenTable</span>——自家应用先当试验田。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 内测的核心结论</div>
+        <div class="tweet-body">
+            <p>结论一句话：光有强模型不够。</p>
+            <p>必须补上四块：独立计算环境、持久记忆、应用连接器、<span class="highlight">后台持续运行</span>。这四块后来全成了 Muse 的架构支柱。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 曾用 Claude 4.6 训练</div>
+        <div class="tweet-body">
+            <p>The Information 爆料：Hatch 早期曾用 <span class="highlight">Claude 4.6</span> 做训练，后来才切到自家 Muse Spark。</p>
+            <p>自研模型没跟上时，先用对手的——这在中美大厂都不算新闻，但被写出来总是扎眼。</p>
+            <p class="source-ref">📎 来源：10</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">⏸️</span> 推迟上线</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 原计划 4 月发布</div>
+        <div class="tweet-body">
+            <p>AI 产品副总裁 Vishal Shah 对路透社确认：原计划 4 月上线，<span class="highlight">为安全推迟</span>。</p>
+            <p>背景正是 Muse Image 翻车——默认把用户照片喂给生图模型，上线几天就被骂到下架。</p>
+            <p class="source-ref">📎 来源：09, 05</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 五个月买了什么</div>
+        <div class="tweet-body">
+            <p>推迟的五个月，换来了 Sentinel 双系统、Secure VM、授权粒度和审计日志。</p>
+            <p>用发布时间换<span class="highlight">信任架构</span>——这笔交易说明 Meta 清楚自己的软肋在哪。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">⚙️</span> 架构定型</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · Muse Spark 先行</div>
+        <div class="tweet-body">
+            <p>2026 年 4 月，Muse Spark 模型发布：多模态推理、工具调用、多 Agent 协作。</p>
+            <p>模型先于产品四个月发布——先在开发者圈建立<span class="highlight">技术信誉</span>，再上消费产品。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 双系统定稿</div>
+        <div class="tweet-body">
+            <p>最终架构：Muse 提出行动，Sentinel 审查。执行、阻止、交用户批准，三选一。</p>
+            <p>授权可以限任务、限金额、限时间段。审计记录<span class="highlight">完整可查</span>。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · Wang 的极简哲学</div>
+        <div class="tweet-body">
+            <p>Alexandr Wang 对 CNBC 说：幕后可能在跑高级编码工作流……对用户保持简单。</p>
+            <p>复杂留给云端，简单留给用户——和 Instinct 的「一条短信」是<span class="highlight">同一种产品观</span>。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🆚</span> 与 OpenClaw 的谱系</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · THE ELEC 的定位图</div>
+        <div class="tweet-body">
+            <p>THE ELEC 的拆解很形象：OpenClaw 是大脑，NemoClaw 是头盔（OpenShell 沙箱）。</p>
+            <p>Muse 是<span class="highlight">商业云服务</span>，只跑 Muse Spark——不开源、不自部署、不让你选模型。</p>
+            <p class="source-ref">📎 来源：10</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 用例对照</div>
+        <div class="tweet-body">
+            <p>THE ELEC 记录的典型用例：网球课预约、小孩学校郊游许可表。</p>
+            <p>和 Hatch 内测清单一脉相承——从第一天起，瞄准的就是<span class="highlight">家庭场景</span>。</p>
+            <p class="source-ref">📎 来源：10</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键判断</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 时间线复盘</div>
+        <div class="tweet-body">
+            <p>2025 建实验室 → 2026-04 Muse Spark → 2026-05 Hatch 曝光 → 原计划 4 月上线推迟 → 2026-09-08 正式发。</p>
+            <p>九个月里最关键的决定不是技术选型，是<span class="highlight">敢推迟</span>。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>Hatch 学会了 OpenClaw 的形，Muse 加上了 Meta 的命门——信任工程。</p>
+            <p>从「能跑」到「敢发」，中间隔着一次翻车、五个月推迟和<span class="highlight">一整套审核架构</span>。</p>
+            <p class="source-ref">📎 来源：09, 10</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 05 · 2026-09-12<br>
+        来源：InfoQ 中文编译 / THE ELEC / The Information / Reuters<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

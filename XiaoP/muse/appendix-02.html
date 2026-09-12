@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Muse · 附录 02</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 02</div>
+        <h2>信任工程四层架构：从 Muse Image 翻车到 Confidential VM</h2>
+        <div class="source">来源：WIRED / InfoQ / The Intelligent / Zuckerberg 访谈 · 2026-09</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 信任不是口号，是工程</div>
+        <div class="tweet-body">
+            <p>WIRED 的评论一针见血：Muse 想替你办事，更需要你信任。</p>
+            <p>而 Meta 的信任账户，从 <span class="highlight">Cambridge Analytica</span> 那天起就是负的。8700 万用户数据的前科，是这款产品绕不开的起点。</p>
+            <p class="source-ref">📎 来源：14, 07</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🔥</span> 前科：Muse Image 翻车</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 上线数天即下架</div>
+        <div class="tweet-body">
+            <p>今年早些时候，Muse Image 上线几天就被迫下架。</p>
+            <p>原因：用户被<span class="highlight">自动加入</span>「Instagram 公开照片用于 AI 生图」——默认开启、未经同意。老剧本重演。</p>
+            <p class="source-ref">📎 来源：05</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 翻车的代价</div>
+        <div class="tweet-body">
+            <p>这次翻车直接改变了 Muse 主产品的发布节奏。</p>
+            <p>原计划 4 月上线，AI 产品副总裁 Vishal Shah 确认：<span class="highlight">为安全推迟</span>。一拖就是五个月。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🧱</span> 四层信任架构</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 第一层：Secure VM</div>
+        <div class="tweet-body">
+            <p>每个用户一台独立云端虚拟机，自带浏览器。</p>
+            <p>授权数据、应用连接都存在这台 VM 里，不与 Meta 主系统混用。Agent 的行动被<span class="highlight">物理隔离</span>在一个盒子里。</p>
+            <p class="source-ref">📎 来源：01, 03</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 第二层：Sentinel 双系统</div>
+        <div class="tweet-body">
+            <p>Muse 提出行动，Sentinel 审查。三个结果：执行、阻止、交用户批准。</p>
+            <p>发起者和审核者是<span class="highlight">两个独立系统</span>——这是从安全领域借来的经典设计，防的是 Agent 自己骗自己。</p>
+            <p class="source-ref">📎 来源：09, 04</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · Sentinel 盯什么</div>
+        <div class="tweet-body">
+            <p>Zuckerberg 在访谈里点名：<span class="highlight">prompt injection</span> 是重点防御对象。</p>
+            <p>恶意网页塞指令劫持 Agent，是当前所有 computer-use 产品的头号攻击面。Sentinel 的所有网络访问先核验，就是堵这条路。</p>
+            <p class="source-ref">📎 来源：06, 01</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 第三层：凭证隔离</div>
+        <div class="tweet-body">
+            <p>Muse 看不到密码和支付密钥。凭证库与 Agent 运行环境隔离。</p>
+            <p>支付走 Link by Stripe 的<span class="highlight">一次性虚拟卡</span>，真实卡号从不落地。Agent 能花钱，但碰不到钱。</p>
+            <p class="source-ref">📎 来源：01, 06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 授权粒度</div>
+        <div class="tweet-body">
+            <p>权限不是总开关，可以限任务、限交易金额、限时间段。</p>
+            <p>加上完整审计日志——「可控、可中止、可追责」这九个字，是 WIRED 给的信任三要素，Muse 逐项对上了。</p>
+            <p class="source-ref">📎 来源：09, 14</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🔐</span> 第四层：Confidential VM（期货）</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · Moxie Marlinspike 这张牌</div>
+        <div class="tweet-body">
+            <p>Signal 创始人 Moxie Marlinspike，被 Zuckerberg 和 Nat Friedman <span class="highlight">亲自挖来</span>，负责 Confidential VM。</p>
+            <p>目标一句话：even Meta cannot see the content。加密界的头号理想主义者，给 Meta 做信任背书。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 用户独占密钥</div>
+        <div class="tweet-body">
+            <p>Confidential VM 的设计：加密密钥由用户独占，Meta 在技术上无法解密。</p>
+            <p>对比现状——Secure VM 阶段 Meta <span class="highlight">承认仍可访问</span>。真正的黑箱，今年晚些时候才来。</p>
+            <p class="source-ref">📎 来源：04, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 为什么必须是 Moxie</div>
+        <div class="tweet-body">
+            <p>Meta 自己说「我们看不见」没人信。让 Signal 的人来设计「看不见」，才可能有人信。</p>
+            <p>这不是技术决策，是<span class="highlight">信任外包</span>——用一个有公信力的名字，给一个没公信力的公司背书。</p>
+            <p class="source-ref">📎 来源：06, 08</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">⚖️</span> 监管的枪口</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · FTC 三连</div>
+        <div class="tweet-body">
+            <p>2025 年 9 月，FTC 对 AI 聊天机器人开调查。2026 年 1 月，Meta 暂停青少年 AI 角色。</p>
+            <p>Muse 发布当周，FTC 再次警告 AI 公司<span class="highlight">信守隐私承诺</span>。监管的枪一直在上膛。</p>
+            <p class="source-ref">📎 来源：03, 07</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 眼镜的信任成本</div>
+        <div class="tweet-body">
+            <p>Ray-Ban 眼镜持续拍摄的争议还没散，Muse 又要登陆眼镜。</p>
+            <p>当 Agent 有眼睛，信任问题从「数据归谁」升级为「<span class="highlight">它在看哪里</span>」。四层架构都是为这一天铺的路。</p>
+            <p class="source-ref">📎 来源：07, 11</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键判断</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 信任工程的真实动机</div>
+        <div class="tweet-body">
+            <p>WIRED 的判断：安全边界设计是在为<span class="highlight">眼镜和支付</span>两个高频场景铺路。</p>
+            <p>没有信任架构，Muse 进不了这两个场景；进不了，就只是一个更贵的聊天机器人。</p>
+            <p class="source-ref">📎 来源：14, 11</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 未回答的问题</div>
+        <div class="tweet-body">
+            <p>出错谁赔偿？敏感数据如何最小化？WIRED 这两个问题，发布材料都没答。</p>
+            <p>四层架构解决了「敢不敢用」，没解决「<span class="highlight">出了事谁负责</span>」。</p>
+            <p class="source-ref">📎 来源：14</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 16 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>社交上下文是 Muse 的独特护城河，也把便利与监控拉得太近。</p>
+            <p>四层信任工程的本质：Meta 在为自己最想拥有的东西——<span class="highlight">你的生活数据</span>——造一个别人敢放进去的保险箱。</p>
+            <p class="source-ref">📎 来源：14</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 02 · 2026-09-12<br>
+        来源：WIRED / InfoQ / The Intelligent / Zuckerberg × Alex Heath 访谈<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

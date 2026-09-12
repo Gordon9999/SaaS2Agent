@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Muse · 附录 03</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 03</div>
+        <h2>Zuckerberg × Alex Heath：免费 1 亿 token、交易抽成、cake pops 与 MMA</h2>
+        <div class="source">来源：Sources 播客（发布前录制）· 2026-09</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 发布前的产品哲学课</div>
+        <div class="tweet-body">
+            <p>Muse 上线前，Zuckerberg 接受了 Alex Heath 的长访谈。</p>
+            <p>没有念稿，全是产品细节和个人用法——这场访谈是理解 Muse <span class="highlight">商业模式和信任设计</span>的第一手材料。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💰</span> 商业模式</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 免费额度是武器</div>
+        <div class="tweet-body">
+            <p>免费档：每周约 <span class="highlight">1 亿 token</span> + 一台免费虚拟机。</p>
+            <p>这个额度大到反常——普通用户根本用不完。目的不是福利，是让试用没有借口。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 交易抽成，不是订阅</div>
+        <div class="tweet-body">
+            <p>商业模式一句话：make you money and save you money。</p>
+            <p>Meta 从 Agent 促成的交易里<span class="highlight">抽很小比例</span>。Agent 帮你省钱，Meta 从省下的钱里分一点。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 为什么不是广告</div>
+        <div class="tweet-body">
+            <p>对话不进广告系统——这条承诺在访谈里被反复确认。</p>
+            <p>Meta 最核心的印钞机被主动关在门外。这是 Muse 与所有 Meta 老产品<span class="highlight">最本质的分界线</span>。</p>
+            <p class="source-ref">📎 来源：04, 06</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🔐</span> 信任设计</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · Moxie 是挖来的，不是请来的</div>
+        <div class="tweet-body">
+            <p>Signal 创始人 Moxie Marlinspike 负责 Confidential VM，是 Zuckerberg 和 Nat Friedman <span class="highlight">亲自出马挖的</span>。</p>
+            <p>目标：even Meta cannot see the content。用加密社区最硬的名字，给 Meta 的隐私承诺背书。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 凭证与 Agent 隔离</div>
+        <div class="tweet-body">
+            <p>凭证库独立存放，Agent 运行时拿不到密码和支付密钥。</p>
+            <p>Sentinel 专盯 <span class="highlight">prompt injection</span>——恶意网页给 Agent 下套，是当前最大的攻击面。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">👨‍👧</span> 个人用法</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · cake pops 失败记</div>
+        <div class="tweet-body">
+            <p>Zuckerberg 让 Muse 给 3 岁女儿安排每周烘焙项目。</p>
+            <p>做 cake pops 翻车了，他的评价：surprisingly difficult。CEO 家的 Agent 也<span class="highlight">不是万能的</span>。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 盯登山许可</div>
+        <div class="tweet-body">
+            <p>他让 Muse 长期盯登山许可的放号——名额一放出来就抢。</p>
+            <p>这是「后台持续运行」最典型的生活场景：<span class="highlight">人等不起，Agent 等得起</span>。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · MMA 教练视角</div>
+        <div class="tweet-body">
+            <p>他让 Muse 看自己练 MMA 的健身视频，给动作反馈。</p>
+            <p>Muse 的点评很毒：it looks like you really gave up。多模态 + 长期记忆，开始有了「<span class="highlight">了解你的教练</span>」的影子。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🧭</span> 战略观点</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 扣住不发更危险</div>
+        <div class="tweet-body">
+            <p>「少数实验室扣住不发更先进的模型，相当危险。」</p>
+            <p>这是 Zuckerberg 对 AI 安全辩论的公开站位：安全来自<span class="highlight">制衡</span>，不来自垄断。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · Llama 4 承认跑偏</div>
+        <div class="tweet-body">
+            <p>访谈里罕见认账：Llama 4 时期 we were off the trajectory。</p>
+            <p>下一代模型代号 <span class="highlight">Watermelon</span>，即将发布。Muse Spark 只是过渡。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 三原则</div>
+        <div class="tweet-body">
+            <p>赋权个人驱动繁荣。AI 为发明而生，不为自动化裁员。安全来自权力制衡。</p>
+            <p>这三条是宣言的骨架，也是 Muse 产品决策的<span class="highlight">最高解释层</span>。</p>
+            <p class="source-ref">📎 来源：06, 07</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键判断</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · CEO 当首席体验官</div>
+        <div class="tweet-body">
+            <p>烘焙、登山、MMA——三个用例全是生活场景，没有一个是办公。</p>
+            <p>这和 Grok Bot 的「AI 同事」路线<span class="highlight">刻意岔开</span>：Muse 要的是你的生活，不是你的工位。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>这场访谈的信息密度排序很诚实：先讲钱怎么收，再讲信任怎么建，最后才讲功能。</p>
+            <p>Zuckerberg 知道，Muse 的问题从来不是「能不能做」，是「<span class="highlight">凭什么让你做</span>」。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 03 · 2026-09-12<br>
+        来源：Zuckerberg × Alex Heath（Sources 播客）/ worldprogramming.org 编译<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

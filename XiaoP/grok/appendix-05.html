@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Grok Bot · 附录 05</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 05</div>
+        <h2>内部原型 + $60B Cursor：分发杠杆</h2>
+        <div class="source">来源：Indian Express / Memeburn · 2026-08</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 狗粮先行</div>
+        <div class="tweet-body">
+            <p>Grok Bot 的起点不是产品规划，是 xAI 内部自用的 <span class="highlight">Bot swarm</span>。</p>
+            <p>先在自家公司跑通销售、运营、工程，再打包卖给全世界。</p>
+            <p class="source-ref">📎 来源：02, 08</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🏠</span> 内部原型解剖</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 销售 Bot</div>
+        <div class="tweet-body">
+            <p>研究目标账户、写 LinkedIn 外呼、拟好邮件——然后<span class="highlight">等人批准</span>再发。</p>
+            <p>内部原型的分工逻辑，后来直接成了产品的角色模板。</p>
+            <p class="source-ref">📎 来源：08</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 运营 Bot</div>
+        <div class="tweet-body">
+            <p>给新员工开账户、处理 Gmail 里的发票。</p>
+            <p>这些「公司后台杂务」正是 Agent 最容易证明价值的地方——<span class="highlight">规则明确、量大、没人爱干</span>。</p>
+            <p class="source-ref">📎 来源：08</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 工程 Bot 流水线</div>
+        <div class="tweet-body">
+            <p>engineering Bot 复现 bug、开 ticket，再转给 debug Bot。</p>
+            <p>Bot 之间交接的玩法，是从内部流水线<span class="highlight">原样搬过来的</span>。</p>
+            <p class="source-ref">📎 来源：08</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💰</span> $60B 收购 Cursor</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 证券文件确认</div>
+        <div class="tweet-body">
+            <p>8 月 14 日证券文件确认：SpaceX 以 <span class="highlight">$60B</span> 收购 Cursor。</p>
+            <p>这桩收购把 Grok Bot 的分发问题一次性解决——马斯克的组合拳。</p>
+            <p class="source-ref">📎 来源：11</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · Cursor 的存量</div>
+        <div class="tweet-body">
+            <p>Cursor 带着约 <span class="highlight">5 万企业客户</span>、约 $4B 年化收入嫁入。</p>
+            <p>Grok Bot 不用从零获客——往 Cursor 付费层一塞，触达即成。</p>
+            <p class="source-ref">📎 来源：11</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 联合训练的伏笔</div>
+        <div class="tweet-body">
+            <p>Grok 4.5 与 Cursor 曾联合训练，动用数万张 Nvidia GPU。</p>
+            <p>收购不是临时起意——模型层和工具层<span class="highlight">早就咬合</span>在一起了。</p>
+            <p class="source-ref">📎 来源：11</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 分发即战略</div>
+        <div class="tweet-body">
+            <p>别人做 Agent 先建渠道，xAI 直接买渠道。</p>
+            <p>$60B 买的不是编辑器，是 <span class="highlight">5 万企业的默认入口</span>——Agent 战争的军备竞赛已经打到分发层。</p>
+            <p class="source-ref">📎 来源：11</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">⚠️</span> 信任前科</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · Grok Build 的黑历史</div>
+        <div class="tweet-body">
+            <p>Memeburn 翻出的旧账：Grok Build 曾无视 opt-out 设置，上传整仓代码——<span class="highlight">包括 secrets</span>。</p>
+            <p>「尊重用户边界」这条，xAI 有失信记录。</p>
+            <p class="source-ref">📎 来源：11</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 欧盟 GDPR 调查</div>
+        <div class="tweet-body">
+            <p>Grok 在欧盟因 GDPR 被查。</p>
+            <p>加上 Grok Bot 零合规认证——欧洲市场基本处于<span class="highlight">半放弃</span>状态。</p>
+            <p class="source-ref">📎 来源：11, 05</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键判断</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 内部原型的双刃</div>
+        <div class="tweet-body">
+            <p>自家狗粮验证了场景，也局限了想象——销售、运营、工程，全是 xAI 自己的组织结构。</p>
+            <p>真实企业的复杂度，远超一家 AI 公司的<span class="highlight">内部需求清单</span>。</p>
+            <p class="source-ref">📎 来源：08, 12</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>Grok Bot 的公式：内部 swarm 验证产品，$60B 收购解决分发。</p>
+            <p>产品可以抄，<span class="highlight">这条分发杠杆</span>抄不走——这就是马斯克系公司的玩法。</p>
+            <p class="source-ref">📎 来源：11</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 05 · 2026-09-12<br>
+        来源：Indian Express / Memeburn / 证券文件<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Muse</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+.report-header .subtitle {
+    font-size: 0.95rem;
+    color: #64748b;
+}
+.report-header .meta {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.section-title .emoji { font-size: 1.1rem; }
+
+.tweet {
+    padding: 1.2rem 0 1.2rem 0.8rem;
+    border-bottom: 1px solid #eef2f6;
+}
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2563eb;
+    margin-bottom: 0.2rem;
+}
+.tweet .tweet-body {
+    font-size: 1rem;
+    color: #1e293b;
+    line-height: 1.8;
+}
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+
+.highlight {
+    color: #16a34a;
+    font-weight: 500;
+}
+
+.source-ref {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin-top: 0.6rem;
+}
+
+.timeline {
+    margin: 0.9rem 0 0.5rem;
+    position: relative;
+    padding-left: 1.1rem;
+}
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: #e2e8f0;
+}
+.tl-item { position: relative; padding-bottom: 0.9rem; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+    content: "";
+    position: absolute;
+    left: -1.1rem;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #16a34a;
+}
+.tl-date {
+    font-size: 0.78rem;
+    color: #2563eb;
+    font-weight: 600;
+    display: block;
+}
+.tl-body {
+    font-size: 0.95rem;
+    color: #1e293b;
+    line-height: 1.7;
+}
+.tl-body strong { font-weight: 600; color: #0f172a; }
+.tl-body span { color: #64748b; }
+
+.appendix-index {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+.appendix-index h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.4rem;
+}
+.appendix-index .group {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #64748b;
+    margin: 1rem 0 0.3rem;
+    letter-spacing: 0.04em;
+}
+.appendix-index ul { list-style: none; }
+.appendix-index li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+}
+.appendix-index li:last-child { border-bottom: none; }
+.appendix-index a { color: #2563eb; text-decoration: none; }
+.appendix-index a:hover { text-decoration: underline; }
+.appendix-index .pending { color: #94a3b8; }
+
+.badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    background: #dcfce7;
+    color: #16a34a;
+    margin-left: 0.5rem;
+}
+.badge.pending {
+    background: #f1f5f9;
+    color: #94a3b8;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+@media (max-width: 640px) {
+    .container { padding: 1.5rem 1rem 3rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .section-title { font-size: 1.05rem; }
+    .tweet .tweet-body { font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="report-header">
+        <h1>InsightView · Muse</h1>
+        <div class="subtitle">社交巨头下场的个人 Agent：入口、信任边界、交易抽成</div>
+        <div class="meta">InsightView · 个人助理方向 · 生成日期：2026-09-12 · 共 18 篇素材</div>
+    </div>
+
+    <!-- ===== 📌 一句话总结 ===== -->
+    <div class="section-title"><span class="emoji">📌</span> 核心观点</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 一句话</div>
+        <div class="tweet-body">
+            <p>Muse 是 Meta 对「个人超级智能」的第一次产品化：住在 <span class="highlight">WhatsApp</span> 里的私人 Agent，你说目标，它拆任务、开网页、填表单、谈判、下单。</p>
+            <p>关掉手机，它还在云端继续干。</p>
+            <p class="source-ref">📎 来源：01, 02, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 成功归因：战略 / 产品 / 组织</div>
+        <div class="tweet-body">
+            <p><strong>战略</strong>：Zuckerberg 押的不是模型，是<span class="highlight">分发</span>。WhatsApp 几十亿用户 + AI 眼镜年销 700 万台，Instinct 们拿不到。</p>
+            <p><strong>产品</strong>：差异化不在跑分，在<span class="highlight">信任工程</span>——独立 VM、Sentinel 审查、Signal 创始人操刀加密。</p>
+            <p><strong>组织</strong>：内测先行。员工订餐厅找宠物照看，九个月磨出产品骨架。</p>
+            <p class="source-ref">📎 来源：06, 07, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 发生了什么变化</div>
+        <div class="tweet-body">
+            <p>个人 Agent 的竞争从「能力」转向<span class="highlight">信任边界</span>。</p>
+            <p>谁先让用户敢把邮箱、支付、日程交出来，谁赢。Meta 刻意先划边界再铺功能——为了眼镜和支付这两个高频场景。</p>
+            <p class="source-ref">📎 来源：08, 11, 14</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 风险一句话</div>
+        <div class="tweet-body">
+            <p>一家有 <span class="highlight">Cambridge Analytica</span> 前科的公司，要搬进你的健康、财务和人际关系。</p>
+            <p>腾讯新闻实测的标题就是结论：功能强大，却让人不安。</p>
+            <p class="source-ref">📎 来源：07, 15</p>
+        </div>
+    </div>
+
+    <!-- ===== 🏢 主题简介 ===== -->
+    <div class="section-title"><span class="emoji">🏢</span> 主题简介</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 基本盘</div>
+        <div class="tweet-body">
+            <p>2026-09-08 美国上线。入口三层：独立 App、muse.ai、<span class="highlight">WhatsApp</span>。</p>
+            <p>免费为主，Power $20/月、Maximum $100/月。底层是 4 月发布的 <span class="highlight">Muse Spark</span> 模型。</p>
+            <p>对手：Instinct（$2.5B 估值）、OpenClaw（开源本地）、Grok Bot（AI 同事）。</p>
+            <p class="source-ref">📎 来源：02, 05, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 上线两天，App Store 第 2</div>
+        <div class="tweet-body">
+            <p>83,000 iOS 下载（两天），美国榜第 2。听着猛，对比就冷静了：<span class="highlight">Threads 发布日 430 万</span>。</p>
+            <p>Android 更弱：Google Play 生产力榜 No.338。</p>
+            <p>市场热度是真的，大众动手意愿还没到。WhatsApp 分发让下载数低估了真实触达。</p>
+            <p class="source-ref">📎 来源：13</p>
+        </div>
+    </div>
+
+    <!-- ===== 📦 公司战略 ===== -->
+    <div class="section-title"><span class="emoji">📦</span> 公司战略</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 免费换规模，交易换收入</div>
+        <div class="tweet-body">
+            <p>Zuckerberg 说得很直白：上线就送<span class="highlight">每周约 1 亿 token</span> 和一台独立虚拟机。</p>
+            <p>逻辑是「Agent 帮你赚钱省钱，最终为自己买单」——Meta 从交易里抽很小的比例。</p>
+            <p>这是平台思维，不是订阅思维。</p>
+            <p class="source-ref">📎 来源：06, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 入口才是真赌注</div>
+        <div class="tweet-body">
+            <p>Instinct 借短信，Muse 直接用自家 WhatsApp——<span class="highlight">微信级的入口</span>加社交关系链，Instinct 拿不到。</p>
+            <p>再往后是眼镜：2025 年 Meta AI 眼镜卖了约 <span class="highlight">700 万台</span>，单机型全球第一。</p>
+            <p>进眼镜之后，Muse 从软件助手变成随身入口。</p>
+            <p class="source-ref">📎 来源：11, 17</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 军备规格</div>
+        <div class="tweet-body">
+            <p>2026 资本开支 <span class="highlight">$145B</span>，到 2028 基建累计 $600B。自研 AI 芯片投产。</p>
+            <p>Superintelligence Labs 从 Mira Murati 的 Thinking Machines Lab 系统性挖人。</p>
+            <p>8 月的 6500 字「个人超级智能」宣言是说明书——被 TNW 评为 Rorschach test。</p>
+            <p class="source-ref">📎 来源：07, 08</p>
+        </div>
+    </div>
+
+    <!-- ===== 🧩 产品战略 ===== -->
+    <div class="section-title"><span class="emoji">🧩</span> 产品战略</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 能力面</div>
+        <div class="tweet-body">
+            <p>收发邮件、订行程、填表单、<span class="highlight">账单谈判</span>、二手车砍价。</p>
+            <p>把 Instagram 收藏的食谱变成购物清单，记住聚会宾客的饮食禁忌，做一年期健身计划。</p>
+            <p>双通道执行：有 API 走连接器，没有就开浏览器自己点。</p>
+            <p class="source-ref">📎 来源：01, 05, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 产品功能演化</div>
+        <div class="tweet-body">
+            <div class="timeline">
+                <div class="tl-item">
+                    <span class="tl-date">2026-04</span>
+                    <div class="tl-body"><strong>Muse Spark 模型</strong><br><span>多模态推理 / 工具调用 / 多 Agent 协作</span></div>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">2026-05</span>
+                    <div class="tl-body"><strong>Hatch 内测启动</strong><br><span>员工用它订餐厅、找宠物照看、操作 OpenTable</span></div>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">2026-09-08</span>
+                    <div class="tl-body"><strong>Muse 上线</strong><br><span>独立 App / 网页 / WhatsApp · Secure VM + Sentinel</span></div>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">2026-09</span>
+                    <div class="tl-body"><strong>Link by Stripe 支付</strong><br><span>一次性虚拟卡号 + 购物保障</span></div>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">已宣布</span>
+                    <div class="tl-body"><strong>Shop Pay / 1Password / Confidential VM / 眼镜</strong><br><span>支付、凭证、加密、硬件四线并进</span></div>
+                </div>
+            </div>
+            <p class="source-ref">📎 来源：05, 09, 10</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 信任工程：四层结构</div>
+        <div class="tweet-body">
+            <p>① <span class="highlight">Secure VM</span>——每用户独立云端虚拟机，Agent 和数据住一起。</p>
+            <p>② <span class="highlight">Sentinel</span>——独立审查 Agent，每个外发动作先过它：放行、拦截、或交用户批准。</p>
+            <p>③ 凭证隔离——Muse 看不到密码和卡号，授权可限到单笔交易。</p>
+            <p>④ Confidential VM（年底）——用户本地持钥，连 Meta 都看不见。</p>
+            <p class="source-ref">📎 来源：04, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 推迟四个月，本身就是产品决策</div>
+        <div class="tweet-body">
+            <p>原计划 4 月上线。AI 产品副总裁 Vishal Shah 说是<span class="highlight">为安全推迟</span>的。</p>
+            <p>触发点大概率是 Muse Image 翻车：上线几天即下架，因为用户被自动加入「Instagram 公开照片用于 AI 生图」。</p>
+            <p>教训直接写进了架构——先把边界划清，再谈功能。</p>
+            <p class="source-ref">📎 来源：05, 09</p>
+        </div>
+    </div>
+
+    <!-- ===== 🏗️ 组织文化 ===== -->
+    <div class="section-title"><span class="emoji">🏗️</span> 组织文化</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · Zuckerberg 全押</div>
+        <div class="tweet-body">
+            <p>宣言、播客、亲自发帖，把自己的生活变成案例：给 3 岁女儿排烘焙项目，<span class="highlight">cake pops 失败</span>（「出乎意料地难」）。</p>
+            <p>盯登山许可，看 MMA 训练视频给反馈（「这局你像放弃了」）。</p>
+            <p>MIT 的 Sherry Turkle 直接开炮：这是「反乌托邦的人类未来」。</p>
+            <p class="source-ref">📎 来源：06, 07</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 挖来 Signal 创始人，就是产品声明</div>
+        <div class="tweet-body">
+            <p>Zuckerberg 和 Nat Friedman 亲自把 <span class="highlight">Moxie Marlinspike</span>（Signal 创始人）挖来操刀 Confidential VM。</p>
+            <p>给「连 Meta 都看不见」背书的，是业界隐私最强硬的人。</p>
+            <p>这笔人才收购本身，比任何隐私承诺文案都有说服力。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 16 · 内测定型了产品</div>
+        <div class="tweet-body">
+            <p>员工先用 Hatch 干活，得出一个关键结论：Agent 要持续工作，<span class="highlight">光有强模型不够</span>。</p>
+            <p>必须补独立计算环境、持久记忆、应用连接器、后台运行。</p>
+            <p>这个内测结论直接变成了 Muse 的产品骨架。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <!-- ===== 附录索引 ===== -->
+    <div class="appendix-index">
+        <h3>📎 附录索引</h3>
+
+        <div class="group">官方产品</div>
+        <ul>
+            <li><a href="appendix-01.html">01 · 官方发布全解：Secure VM / Sentinel / Link 支付 / 三层入口</a></li>
+            <li><a href="appendix-02.html">02 · 信任工程四层架构：从 Muse Image 翻车到 Confidential VM</a></li>
+        </ul>
+
+        <div class="group">创始人 / 高管访谈</div>
+        <ul>
+            <li><a href="appendix-03.html">03 · Zuckerberg × Alex Heath：免费 1 亿 token、交易抽成、cake pops 与 MMA</a></li>
+            <li><a href="appendix-04.html">04 · 个人超级智能宣言：6500 字、$145B、Rorschach test</a></li>
+        </ul>
+
+        <div class="group">第三方分析</div>
+        <ul>
+            <li><a href="appendix-05.html">05 · 研发史：从 Hatch 到 Muse——九个月、内测、推迟上线</a></li>
+            <li><a href="appendix-06.html">06 · 竞品格局：vs Instinct / OpenClaw / Grok Bot / NemoClaw</a></li>
+            <li><a href="appendix-07.html">07 · 硬件生态：700 万台 AI 眼镜与 $299 的太阳镜逻辑</a></li>
+        </ul>
+
+        <div class="group">实测 / 用户视角</div>
+        <ul>
+            <li><a href="appendix-08.html">08 · 实测：功能强大，却让人不安</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        Generated by InsightView · 2026-09-12<br>
+        素材来源：Meta 官方 / Reuters / CNBC / WIRED / TechCrunch / TNW / GenAI Daily 等公开报道<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

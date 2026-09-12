@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Muse · 附录 01</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 01</div>
+        <h2>官方发布全解：Secure VM / Sentinel / Link 支付 / 三层入口</h2>
+        <div class="source">来源：Meta 官方发布 + 多家媒体综合 · 2026-09-08</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 定位</div>
+        <div class="tweet-body">
+            <p>Muse 不是聊天机器人升级，是<span class="highlight">目标驱动型 Agent</span>：你说目标，它拆解任务、调配资源、规划执行、独立完成。</p>
+            <p>涵盖网页浏览、表单填写、邮件收发、行程预订、账单优化、二手车谈判。</p>
+            <p class="source-ref">📎 来源：Meta 官方 / 01</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 一句官方文案胜过千言</div>
+        <div class="tweet-body">
+            <p>Meta 博客原文："It can <span class="highlight">open a browser, fill out forms, and negotiate</span> on their behalf."</p>
+            <p>三个动词——打开、填写、谈判。全是动作，没有一句提「对话」。</p>
+            <p class="source-ref">📎 来源：02</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📦</span> 产品角度</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 三层入口</div>
+        <div class="tweet-body">
+            <p>独立 App、muse.ai 网页、<span class="highlight">WhatsApp</span>——把 Agent 塞进你已经在用的聊天软件。</p>
+            <p>「像给联系人发消息一样调度 Agent」，这是降低使用门槛的核心设计。</p>
+            <p class="source-ref">📎 来源：01, 03</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 后台持续运行</div>
+        <div class="tweet-body">
+            <p>关闭 App，任务不停。云端虚拟机继续<span class="highlight">刷新页面、等待时机</span>。</p>
+            <p>遇到敏感操作、权限确认，主动弹窗。效率和安全两头都要。</p>
+            <p class="source-ref">📎 来源：01</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 长期记忆与主动性</div>
+        <div class="tweet-body">
+            <p>持续记住偏好、习惯、历史数据，主动输出建议。</p>
+            <p>例子：整理你收藏的食谱生成购物清单，结合亲友<span class="highlight">饮食禁忌</span>优化聚会菜单。</p>
+            <p>传统助手是一问一答，Muse 想形成完整执行链。</p>
+            <p class="source-ref">📎 来源：01, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 集成生态</div>
+        <div class="tweet-body">
+            <p>已接：<span class="highlight">Google Workspace、Ticketmaster、OpenTable、Spotify、Apple Health</span>。</p>
+            <p>双通道：有 API 走公共接口，没有就开浏览器自己操作——和 Instinct 的「人能做它就能做」同款哲学。</p>
+            <p class="source-ref">📎 来源：05</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 支付：Link by Stripe</div>
+        <div class="tweet-body">
+            <p>首款获得 <span class="highlight">Link 购物保障</span>的 AI 智能体。生成一次性虚拟银行卡，真实卡号不落地。</p>
+            <p>附带价保、免费退货、破损赔付。后续接 Shop Pay 和 1Password。</p>
+            <p>支付这关过了，Agent 才算能真正「下单」。</p>
+            <p class="source-ref">📎 来源：01, 03</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 安全架构三层</div>
+        <div class="tweet-body">
+            <p>① 每用户独立 <span class="highlight">Secure VM</span>，自带浏览器，存授权数据和连接。</p>
+            <p>② Sentinel 审核机制，所有网络访问先核验，杜绝越权。</p>
+            <p>③ Muse 看不到密码和支付密钥；权限可随时开关，操作日志完整可查。</p>
+            <p class="source-ref">📎 来源：01</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 数据训练可关</div>
+        <div class="tweet-body">
+            <p>用户可自主关闭数据训练权限——交互数据不用于训练、<span class="highlight">不流入广告体系</span>。</p>
+            <p>这在 Meta 的产品序列里是头一遭。是承诺还是姿态，取决于 Confidential VM 落地成色。</p>
+            <p class="source-ref">📎 来源：01, 04</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 18 岁门槛与地区</div>
+        <div class="tweet-body">
+            <p>18 岁以上，美国先行。iOS、安卓、网页同步。</p>
+            <p>FTC 已经警告 AI 公司要信守隐私承诺——<span class="highlight">监管的枪一直在上膛</span>。</p>
+            <p class="source-ref">📎 来源：02, 03</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键细节</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 定价结构</div>
+        <div class="tweet-body">
+            <p>基础免费覆盖大部分用途。Power <span class="highlight">$20/月</span>、Maximum <span class="highlight">$100/月</span>解锁更高用量。</p>
+            <p>对照 Zuckerberg 的说法：免费每周约 1 亿 token + 一台虚拟机。免费额度是获客武器。</p>
+            <p class="source-ref">📎 来源：05, 06</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 和 ChatGPT Atlas 的对照</div>
+        <div class="tweet-body">
+            <p>OpenAI 已关闭浏览器 Agent 产品 <span class="highlight">ChatGPT Atlas</span>，能力并回主 App。</p>
+            <p>Muse 反其道行之：独立 App + WhatsApp 双入口，Agent 作为一等公民而非功能标签。</p>
+            <p class="source-ref">📎 来源：03, 05</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 眼镜是明牌</div>
+        <div class="tweet-body">
+            <p>官方确认 Muse 未来登陆 AI 眼镜，打通移动、网页、穿戴全场景。</p>
+            <p>适配机型和时间未公布——但<span class="highlight">随身入口</span>这条线已经在图纸上。</p>
+            <p class="source-ref">📎 来源：01, 04</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 眼下的短板</div>
+        <div class="tweet-body">
+            <p>Secure VM 目前不是完全黑箱——Meta 承认技术上仍可访问，<span class="highlight">Confidential VM 年底才来</span>。</p>
+            <p>隐私能力一半已上线，一半是规划。买的是期货。</p>
+            <p class="source-ref">📎 来源：09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>这份发布材料的重心排序很说明问题：安全架构的篇幅<span class="highlight">超过功能清单</span>。</p>
+            <p>Meta 知道，这款产品的生死不在「能干什么」，在「你敢让它干什么」。</p>
+            <p class="source-ref">📎 来源：01, 04, 09</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 01 · 2026-09-12<br>
+        来源：Meta 官方发布 / Reuters / CNBC / Tech in Asia / GenAI Daily<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

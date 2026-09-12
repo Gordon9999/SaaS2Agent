@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Grok Bot · 附录 02</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 02</div>
+        <h2>架构真相：共享一台云电脑与 OWASP 警告</h2>
+        <div class="source">来源：TechTimes / toolradar / hokai.io · 2026-08/09</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 宣传与文档的距离</div>
+        <div class="tweet-body">
+            <p>宣传里说「每个 Bot 一台专属云电脑」。官方文档里写的另一回事。</p>
+            <p>TechTimes 扒出原话：每个账户所有 Bot <span class="highlight">共享一台云电脑</span>、一套浏览器会话、一套凭证池。</p>
+            <p class="source-ref">📎 来源：04</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🏗️</span> 架构真相</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 屏幕不是安全边界</div>
+        <div class="tweet-body">
+            <p>文档原话：The screens are separate work surfaces, not separate security boundaries。</p>
+            <p>你在界面上看到的多个 Bot 窗口，只是<span class="highlight">工作区</span>，不是隔离区。</p>
+            <p class="source-ref">📎 来源：04</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · FAQ 自己拆台</div>
+        <div class="tweet-body">
+            <p>官方 FAQ 更直接：Do not use separate Bots as a security boundary。</p>
+            <p>并且承认共享机器是 <span class="highlight">a real blast radius</span>——真实爆炸半径。这个坦白在竞品里找不到第二家。</p>
+            <p class="source-ref">📎 来源：04, 10</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 隔离粒度</div>
+        <div class="tweet-body">
+            <p>hokai.io 的核对结论：隔离是 per-account，不是 per-Bot。</p>
+            <p>同一账户下，销售 Bot 和财务 Bot <span class="highlight">住在同一台机器</span>、看同一套凭证。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">⚠️</span> OWASP 警告</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 头号风险</div>
+        <div class="tweet-body">
+            <p>OWASP GenAI 2026 报告：Agent Goal Hijacking 是头号风险。</p>
+            <p>prompt injection 试验中，<span class="highlight">70%</span> 导致凭证失窃。共享凭证池的架构，正好把这个风险放大到全部 Bot。</p>
+            <p class="source-ref">📎 来源：04</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 攻击链条推演</div>
+        <div class="tweet-body">
+            <p>一个 Bot 读到恶意网页 → 被注入指令 → 拿到共享凭证池 → 同账户所有 Bot 的系统全部沦陷。</p>
+            <p>隔离失效的代价不是丢一个 Bot，是<span class="highlight">丢整个账户</span>。</p>
+            <p class="source-ref">📎 来源：04, 06</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🖥️</span> computer use 的代价</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 工作方式</div>
+        <div class="tweet-body">
+            <p>Grok Bot 的 computer use：截图 → 视觉模型识别元素 → 发出鼠标键盘指令。</p>
+            <p>官方称之为 service-agnostic interaction model——不依赖任何 API，<span class="highlight">像人一样操作</span>。</p>
+            <p class="source-ref">📎 来源：04</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 三个代价</div>
+        <div class="tweet-body">
+            <p>比 API 慢。UI 一改版就断。没有结构化审计日志。</p>
+            <p>连官方文档都建议：<span class="highlight">有 connector 就优先 connector</span>——自己的架构自己都不完全信任。</p>
+            <p class="source-ref">📎 来源：04</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📋</span> 合规真空</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 五无状态</div>
+        <div class="tweet-body">
+            <p>toolradar 核查：无 SOC 2、无 ISO 27001、无 GDPR、无 HIPAA、无 FedRAMP。</p>
+            <p>结论很硬：这是<span class="highlight">合规硬阻断</span>，不是文书缺口——受监管行业直接出局。</p>
+            <p class="source-ref">📎 来源：05</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 审计视图是期货</div>
+        <div class="tweet-body">
+            <p>hokai.io：审计视图已宣布、未部署；无独立安全审计。</p>
+            <p>评分卡：API robustness <span class="highlight">4/10</span>、UI simplicity 4/10、Latency 6/10、Moat 6/10。</p>
+            <p class="source-ref">📎 来源：06</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🆚</span> 对照</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 四方对比的唯一</div>
+        <div class="tweet-body">
+            <p>AI2Work 的四方对比：Grok Bot 是唯一<span class="highlight">无 agent 间隔离、无合规认证、无免费评估通道</span>的产品。</p>
+            <p>Claude Cowork 握着 SOC 2 Type II / ISO 27001 / HIPAA 全套认证。</p>
+            <p class="source-ref">📎 来源：10</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键判断</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 诚实但危险</div>
+        <div class="tweet-body">
+            <p>xAI 的文档异常诚实：共享架构、爆炸半径、别拿 Bot 当边界，全写了。</p>
+            <p>但诚实不改变事实——<span class="highlight">架构风险是设计出来的</span>，是速度和成本的主动取舍。</p>
+            <p class="source-ref">📎 来源：04</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>「每个 Bot 一台电脑」是营销语言，「每个账户一台电脑」是工程现实。</p>
+            <p>买之前读 FAQ——这是 Grok Bot 给所有 Agent 产品上的课：<span class="highlight">文档比发布会诚实</span>。</p>
+            <p class="source-ref">📎 来源：04, 06</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 02 · 2026-09-12<br>
+        来源：TechTimes / toolradar / hokai.io / AI2Work / OWASP<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

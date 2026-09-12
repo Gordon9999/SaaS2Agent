@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Grok Bot · 附录 06</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 06</div>
+        <h2>实测：74 个素材 2 小时，与三个缺失的控制</h2>
+        <div class="source">来源：AI Tool Analysis / Build Fast with AI · 2026-08/09</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 实测的最高光</div>
+        <div class="tweet-body">
+            <p>独立游戏开发者 Danny Limanseta 的实测：让 Bot 读代码库、给每个占位图写 prompt、生成图片、裁成透明 PNG、接回工程。</p>
+            <p><span class="highlight">74 个游戏素材，约 2 小时</span>完成——这是 Grok Bot 最有说服力的实战记录。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🎮</span> 任务实录</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 完整流水线</div>
+        <div class="tweet-body">
+            <p>这个任务的含金量在全链条：读工程 → 理解需求 → 生成 → 后处理 → 回写。</p>
+            <p>不是单点问答，是<span class="highlight">跨工具的项目级执行</span>——云电脑 + 终端 + 文件系统的组合在这里跑通了。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 其他任务</div>
+        <div class="tweet-body">
+            <p>itch.io 上传触发（监听 GitHub push）、Figma wireframe（走 MCP）、订阅审计。</p>
+            <p>触发器 + 设计工具 + 财务清理，覆盖<span class="highlight">三种典型知识工作</span>。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 初期偏慢</div>
+        <div class="tweet-body">
+            <p>槽点一：任务初期明显偏慢，Bot 要花不少时间「进入状态」。</p>
+            <p>长任务的尾段很猛，<span class="highlight">启动成本</span>不低。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 退订反而没退干净</div>
+        <div class="tweet-body">
+            <p>最反直觉的结果：最简单的退订任务，反而没退干净。</p>
+            <p>复杂流水线能跑通，简单任务翻车——Agent 的<span class="highlight">能力边界还很参差</span>。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🕳️</span> 三个缺失的控制</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 无 dry run</div>
+        <div class="tweet-body">
+            <p>不能先「彩排」一遍看它会做什么。</p>
+            <p>对不可逆操作——删数据、发邮件、改代码——没有 <span class="highlight">dry run</span> 就是闭眼开车。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 无 undo</div>
+        <div class="tweet-body">
+            <p>做错了，没有撤销键。</p>
+            <p>Agent 产品的基本伦理是「可回滚」，Grok Bot 目前<span class="highlight">没有这块安全网</span>。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 无 per-action 审计日志</div>
+        <div class="tweet-body">
+            <p>它做了什么、什么时候做的、改了哪个文件——没有逐条审计记录。</p>
+            <p>企业追责需要的<span class="highlight">证据链</span>，目前是断的。审计视图官方说在做，还没部署。</p>
+            <p class="source-ref">📎 来源：12, 06</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🧪</span> 评测方法论</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 不花 $200 的诚实</div>
+        <div class="tweet-body">
+            <p>AI Tool Analysis 明说：评测基于官方文档 + 付费用户报告，不花 $200 买 4 天大的 beta。</p>
+            <p>在人人抢着发「首发实测」的时候，这种<span class="highlight">克制</span>反而增加了可信度。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🔑</span> 信任问题</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 需要账户钥匙</div>
+        <div class="tweet-body">
+            <p>Build Fast with AI 点出核心矛盾：Bot 干活需要你的账户钥匙。</p>
+            <p>beta 阶段无可靠性数据——给钥匙的决策，目前只能靠<span class="highlight">信仰</span>。</p>
+            <p class="source-ref">📎 来源：14</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键判断</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 能力与控制不同步</div>
+        <div class="tweet-body">
+            <p>74 个素材证明了执行能力；三个缺失的控制证明了工程成熟度还没到。</p>
+            <p>能力跑在前面，<span class="highlight">护栏在后面追</span>——这是所有早期 Agent 产品的共性，但 Grok Bot 追得尤其慢。</p>
+            <p class="source-ref">📎 来源：12</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>实测结论：适合敢承担风险的早期用户做复杂任务，不适合把不可逆操作交给它。</p>
+            <p>74 个素材 2 小时是上限，<span class="highlight">无 undo</span> 是底线——看清两头再决定给不给钥匙。</p>
+            <p class="source-ref">📎 来源：12, 14</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 06 · 2026-09-12<br>
+        来源：AI Tool Analysis / Build Fast with AI / hokai.io<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

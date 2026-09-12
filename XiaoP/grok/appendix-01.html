@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Grok Bot · 附录 01</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 01</div>
+        <h2>官方发布全解：云电脑 / Bot 团队 / 登录交接 / 分发体系</h2>
+        <div class="source">来源：xAI 官方发布 + ayautomate / indianexpress 综合 · 2026-08-11</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 定位</div>
+        <div class="tweet-body">
+            <p>2026 年 8 月 11 日，xAI 发布 Grok Bot（beta）：常驻 AI Agent。</p>
+            <p>不是聊天助手，是<span class="highlight">AI 同事</span>——每个 Bot 有自己的云电脑、自己的登录、自己的角色分工。</p>
+            <p class="source-ref">📎 来源：02</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 内部原型转产品</div>
+        <div class="tweet-body">
+            <p>Grok Bot 不是凭空设计，是 xAI 内部自建的 Bot swarm 转产品。</p>
+            <p>内部用它做销售外呼、营销、办公运营、bug 修复——<span class="highlight">先自己吃狗粮</span>，再卖给别人。</p>
+            <p class="source-ref">📎 来源：02, 08</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📦</span> 产品机制</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 每个 Bot 一台云电脑</div>
+        <div class="tweet-body">
+            <p>每个 Bot 配专属持久云电脑：浏览器、文件系统、终端。</p>
+            <p>关掉笔记本，任务继续跑。这是和普通聊天助手<span class="highlight">最本质的分界线</span>。</p>
+            <p class="source-ref">📎 来源：02, 14</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 多 Bot 群聊</div>
+        <div class="tweet-body">
+            <p>2-6 个 Bot 进同一个群聊，互相交接任务。</p>
+            <p>@-mention 可以中途拉新 Bot 进来。像在一个 <span class="highlight">AI 团队的工作群</span>里当老板。</p>
+            <p class="source-ref">📎 来源：02, 05</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 界面像 iMessage</div>
+        <div class="tweet-body">
+            <p>ayautomate 的上手印象：界面像 iMessage，侧栏是命名 Bot 列表。</p>
+            <p>新 Bot 没有设置面板——自然语言描述需求，它反问澄清、给计划、开工。<span class="highlight">零配置</span>。</p>
+            <p class="source-ref">📎 来源：13</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 登录交接</div>
+        <div class="tweet-body">
+            <p>需要登录时，Bot 把浏览器开到登录页：sign in, then hand it back。</p>
+            <p>你输密码，它接着干活。凭证<span class="highlight">不进对话记录</span>——人工交接是这个产品的关键动作。</p>
+            <p class="source-ref">📎 来源：13, 09</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · teach a task：录屏教学</div>
+        <div class="tweet-body">
+            <p>录屏演示一遍工作流，Bot 看完自己泛化复现。</p>
+            <p>配合 routines 定时执行——「<span class="highlight">演示一次，天天自动跑</span>」是它的杀手级交互。</p>
+            <p class="source-ref">📎 来源：13</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 连接器与插件库</div>
+        <div class="tweet-body">
+            <p>连接器：Gmail / Calendar / Drive / Slack / GitHub / Teams / Salesforce / Notion / Box + 自定义 MCP。</p>
+            <p>插件库还有 AWS Agents、SageMaker、Browserbase、Composio、Context7。<span class="highlight">生态位补得很快</span>。</p>
+            <p class="source-ref">📎 来源：06, 13</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 不能手动选模型</div>
+        <div class="tweet-body">
+            <p>模型自动路由，用户不能手动选。</p>
+            <p>对普通用户是省心，对技术团队是<span class="highlight">限制</span>——官方赌的是「路由比你会选」。</p>
+            <p class="source-ref">📎 来源：13, 08</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🚀</span> 底座与分发</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · Grok 4.6 同日发布</div>
+        <div class="tweet-body">
+            <p>与 Grok Bot 同日发 Grok 4.6——专为<span class="highlight">长时 Agent</span> 打造的模型。</p>
+            <p>模型和产品同天发，说明 Agent 不是套壳，是模型迭代的直接目的地。</p>
+            <p class="source-ref">📎 来源：02</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · API 基本盘</div>
+        <div class="tweet-body">
+            <p>xAI 官网数据：Grok 4.3 为当前旗舰，API 日调用 <span class="highlight">100 万+</span>，中位延迟低于 200ms。</p>
+            <p>Agent 建立在已经规模化验证的推理基建上。</p>
+            <p class="source-ref">📎 来源：01</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 借 Cursor 分发</div>
+        <div class="tweet-body">
+            <p>Grok Bot 不做独立订阅，藏在 <span class="highlight">Cursor</span> 和 SuperGrok 的付费层里。</p>
+            <p>SpaceX 以 $60B 收购 Cursor——5 万企业客户、约 $4B 年化收入，现成的分发管道。</p>
+            <p class="source-ref">📎 来源：03, 11</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🆚</span> 差异点</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · Elon 的四个差异点</div>
+        <div class="tweet-body">
+            <p>官方自述差异：无 API/MCP 依赖、主动识别工作、模型自动路由、简洁界面。</p>
+            <p>矛头直指 <span class="highlight">Claude Cowork</span>——这场发布从一开始就是对 Anthropic 的回应。</p>
+            <p class="source-ref">📎 来源：08</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 无 benchmark 的尴尬</div>
+        <div class="tweet-body">
+            <p>发布没有任何 benchmark 数据，无法与 Anthropic / OpenAI 直接比较。</p>
+            <p>马斯克式发布：故事满分，<span class="highlight">数据欠费</span>。</p>
+            <p class="source-ref">📎 来源：08</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键判断</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>Grok Bot 的产品公式：内部验证的 Bot swarm + 每任务一台云电脑 + 录屏教学 + Cursor 分发。</p>
+            <p>它的赌注是——企业不缺聊天 AI，缺的是<span class="highlight">能登录系统干活的 AI</span>。</p>
+            <p class="source-ref">📎 来源：02, 11, 13</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 01 · 2026-09-12<br>
+        来源：xAI 官方 / ayautomate / Indian Express / Build Fast with AI<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

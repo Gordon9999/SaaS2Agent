@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Grok Bot · 附录 07</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 07</div>
+        <h2>上手指南：五个建议与用例矩阵</h2>
+        <div class="source">来源：Windows Mode / ayautomate · 2026-08/09</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 从哪开始</div>
+        <div class="tweet-body">
+            <p>Windows Mode 给了五条上手建议，核心思想一条：把它当<span class="highlight">新员工</span>带，不当搜索引擎用。</p>
+            <p>命名、窄任务、声明禁区、沉淀 skill、定时跑——一套完整的「AI 员工入职流程」。</p>
+            <p class="source-ref">📎 来源：03</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🖐️</span> 五条建议</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 建议一：单一窄任务起步</div>
+        <div class="tweet-body">
+            <p>第一个任务要窄：一个目标、一个系统、一个输出。</p>
+            <p>宽任务会放大 Agent 的<span class="highlight">决策漂移</span>——先让它把一件小事做稳。</p>
+            <p class="source-ref">📎 来源：03</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 建议二：给 Bot 起名</div>
+        <div class="tweet-body">
+            <p>别小看命名。起了名字的 Bot 才有「角色」。</p>
+            <p>侧栏里一排<span class="highlight">命名 Bot</span>，本质上是你给自己搭的 AI 组织架构图。</p>
+            <p class="source-ref">📎 来源：03, 13</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 建议三：声明禁区</div>
+        <div class="tweet-body">
+            <p>开工前写清楚：什么不许碰、什么必须问、什么操作算越界。</p>
+            <p>在<span class="highlight">无 undo</span> 的产品里，禁区声明是你唯一的保险丝。</p>
+            <p class="source-ref">📎 来源：03</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 建议四：存成 skill</div>
+        <div class="tweet-body">
+            <p>跑通的工作流存成 skill，下次直接调用。</p>
+            <p>配合 teach a task 的录屏教学——<span class="highlight">演示一次，永久复用</span>。</p>
+            <p class="source-ref">📎 来源：03, 13</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 建议五：定时 routines</div>
+        <div class="tweet-body">
+            <p>已学任务挂到 routines，定时自动跑。</p>
+            <p>这一步完成，Bot 才从「你指挥的工具」变成「<span class="highlight">自己上班的 employee</span>」。</p>
+            <p class="source-ref">📎 来源：03, 13</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🗂️</span> 用例矩阵</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 七个角色</div>
+        <div class="tweet-body">
+            <p>Sales Outbound / Talent Scout / Paid Media / Expense Manager / Bug Reproduction / Account Health / Chief of Staff。</p>
+            <p>七个用例覆盖了<span class="highlight">销售、招聘、投放、财务、工程、客户成功、行政</span>——基本是中小公司的完整职能表。</p>
+            <p class="source-ref">📎 来源：03</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 共性</div>
+        <div class="tweet-body">
+            <p>这些用例的共性：规则明确、重复高频、跨系统操作。</p>
+            <p>反例也清楚：需要<span class="highlight">创意判断</span>和人际关系的工作，不在矩阵里。</p>
+            <p class="source-ref">📎 来源：03</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🆚</span> 和普通聊天助手的区别</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 五个差异</div>
+        <div class="tweet-body">
+            <p>持久性、命名身份、浏览器终端、可复用工作流、无免费层。</p>
+            <p>前四个是能力差异，最后一个是<span class="highlight">门槛差异</span>——想清楚再付钱。</p>
+            <p class="source-ref">📎 来源：03</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🚪</span> 上手动作分解</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 创建第一个 Bot</div>
+        <div class="tweet-body">
+            <p>没有设置面板：自然语言描述需求 → Bot 反问澄清 → 给出计划 → 开工。</p>
+            <p>像面试一个新员工——<span class="highlight">你说 JD，它复述确认</span>。</p>
+            <p class="source-ref">📎 来源：13</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 登录交接动作</div>
+        <div class="tweet-body">
+            <p>Bot 把浏览器停在登录页：sign in, then hand it back。</p>
+            <p>你完成登录，它接管。这个动作会反复出现——<span class="highlight">人在关键时刻回环</span>，是这个产品的安全设计。</p>
+            <p class="source-ref">📎 来源：13</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 插件先装好</div>
+        <div class="tweet-body">
+            <p>开工前把连接器配好：Notion / Slack / Drive / GitHub 优先。</p>
+            <p>官方文档自己建议：<span class="highlight">有 connector 就别让它裸开浏览器</span>——更快也更稳。</p>
+            <p class="source-ref">📎 来源：13, 04</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 关键判断</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 五条建议的潜台词</div>
+        <div class="tweet-body">
+            <p>窄任务、禁区、skill——每一条都在补产品的短板：无 dry run、无 undo、能力参差。</p>
+            <p>用户指南的本质，是<span class="highlight">用户替产品补安全网</span>。</p>
+            <p class="source-ref">📎 来源：03, 12</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>Grok Bot 的正确打开方式：先当一个窄任务的专职员工用，跑稳了再扩编。</p>
+            <p>上来就托管全部工作流的人，多半会成为<span class="highlight">下一篇翻车实录</span>的主角。</p>
+            <p class="source-ref">📎 来源：03, 13</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 07 · 2026-09-12<br>
+        来源：Windows Mode / ayautomate / AI Tool Analysis<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>
