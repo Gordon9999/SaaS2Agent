@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>附录 02 · 创始人档案：23 岁的 Noah Shinn | InsightView · Instinct</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider {
+    margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px;
+}
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title {
+    font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem;
+}
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) {
+    .container { padding: 1.5rem 1rem 3rem; }
+    .section-title { font-size: 1.05rem; }
+    .tweet .tweet-body { font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 02</div>
+        <h2>创始人档案：23 岁的 Noah Shinn</h2>
+        <div class="source">来源：中文 AI 人物专栏 + WSJ / Forbes / TechCrunch 履历交叉核实 · 2026-09</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 核心结论</div>
+        <div class="tweet-body">
+            <p>Noah Shinn 不是"热点包装型"创业者。他的履历是一条直线：<span class="highlight">Agent 反思研究 → 可靠性评测标准 → 企业 Agent 工业落地 → 个人 Agent 创业</span>。</p>
+            <p>资本按 25 亿美元定价，买的不是现在的生意，是这条线的信用。</p>
+            <p class="source-ref">📎 来源：中文人物专栏 / WSJ / TechCrunch</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">👤</span> 人物背景</div>
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 基础档案</div>
+        <div class="tweet-body">
+            <p>2003 年生，现年 23 岁。运营主体 <span class="highlight">Spear Street Technology, Inc.</span>，公司注册地旧金山。</p>
+            <p>标签很短：Reflexion 第一作者 / τ-bench 共同作者 / 前 Sierra 早期研究员。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 教育路径</div>
+        <div class="tweet-body">
+            <p>曾在 <span class="highlight">Northeastern University 与 MIT</span> 从事机器学习和编程语言研究，方向涉及代码生成与 AI Agent。</p>
+            <p>2023 年从东北大学退学。这不是放弃科研，而是换了一条"在工业界做研究"的路。</p>
+            <p class="source-ref">📎 来源：中文人物专栏 / WSJ</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 核心观点</div>
+    <div class="tweet">
+        <div class="tweet-label">推 4 · Reflexion：让 Agent 从失败里长记性</div>
+        <div class="tweet-body">
+            <p><span class="highlight">Reflexion</span> 是 NeurIPS 2023 的论文，Shinn 是第一作者。核心思路简单但反直觉：让语言模型在一次任务失败之后，把错误写成一段话、塞进记忆里、下一轮再试。</p>
+            <p>区别于传统的 CoT、ReAct 推理模式——它不优化单次推理，它优化<span class="highlight">跨次迭代</span>。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 91% vs 80%</div>
+        <div class="tweet-body">
+            <p>这个"自我反思"机制，让一个普通 Agent 在 <span class="highlight">HumanEval</span> 上跑到了 <span class="highlight">91% pass@1</span>——比论文里 GPT-4 自报的 80% 高出一截。</p>
+            <p>一份 2023 年的论文，后来定义了 2025 到 2026 年 Agent 反思方向的评测语言。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · τ-bench：测的是"不翻车"</div>
+        <div class="tweet-body">
+            <p>他与合作者一起做了 <span class="highlight">τ-bench</span>：一个专门评测 Agent 真实任务能力的基准——能不能和用户对话、能不能调用工具、能不能遵守业务规则、能不能在多次运行中保持稳定。</p>
+            <p>核心指标 <span class="highlight">pass^k</span>，重点衡量 Agent 多次运行不翻车的稳定性，而不是单次 Demo 效果。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 早期测试的残酷结论</div>
+        <div class="tweet-body">
+            <p>在 τ-bench 的早期测试里，主流 Agent 完成的任务<span class="highlight">不到一半</span>；而且重复跑几次就明显掉链子——同一任务要求连续成功 8 次，成功率甚至跌到 25% 左右。</p>
+            <p>这篇基准后来被 OpenAI、Anthropic、通义千问、DeepSeek 等模型在发布时引用。</p>
+            <p class="source-ref">📎 来源：中文人物专栏 / 中文科技媒体</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 一句最诚实的自述</div>
+        <div class="tweet-body">
+            <p>他对媒体说过一句很直接的话：做 Instinct 不是想做"又一个聊天框"，而是想把他在 Sierra 做企业 Agent 的经验，<span class="highlight">直接搬到普通用户身上</span>。</p>
+            <p>这句话解释了产品为什么不是"给聊天机器人加几个插件"，而是从执行能力出发重建。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📦</span> 公司角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 9 · Sierra 两年：企业级 Agent 的工业训练</div>
+        <div class="tweet-body">
+            <p>Sierra 是一家做客服 Agent 的硅谷独角兽，创始人之一是前 Salesforce 联席 CEO <span class="highlight">Bret Taylor</span>（前 OpenAI 董事会主席）。</p>
+            <p>Sierra 的核心产品是让 AI 替企业去和真实用户对话、解决真实问题。Shinn 是最早的员工之一，担任研究科学家，待了约一两年。</p>
+            <p class="source-ref">📎 来源：中文人物专栏 / WSJ</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 从 Sierra 带走了什么</div>
+        <div class="tweet-body">
+            <p>在企业场景里，他处理的是真实业务环境下的 <span class="highlight">Agent 幻觉、权限管控、复杂诉求</span>。</p>
+            <p>这段经历给了他两样东西：知道企业级 Agent 的可靠性天花板在哪；知道那些工程约束搬到消费者场景会发生什么。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 出发点：2025 年 4 月</div>
+        <div class="tweet-body">
+            <p>2025 年，他离开 Sierra，在加州注册了 <span class="highlight">Spear Street Technology</span>——也就是 Instinct 的运营主体。据部分报道口径，项目筹备始于 2025 年底，产品于 2026 年 2 月启动封闭 beta。</p>
+            <p class="source-ref">📎 来源：中文人物专栏 / Dutch Startup</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🧩</span> 产品角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 他赌的是"广度权限"</div>
+        <div class="tweet-body">
+            <p>Instinct 连接 WhatsApp、iMessage、邮箱、日历，再加上屏幕、音频、位置这些设备权限。</p>
+            <p>这正是它和市面上其他 Agent 最大的区别：Rabbit 的 r1、OpenAI 与 Google 的 Agent 类产品，大多守住"窄功能"或"单设备"；<span class="highlight">Instinct 一上来就要"全权限"</span>。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 早期用户用它做了什么</div>
+        <div class="tweet-body">
+            <p>有人用它规划跨州自驾，有人用它承包每周采购，有人用它取消了价值几百美元的订阅服务，有人正在筹备婚礼。</p>
+            <p>还有人真的在上面<span class="highlight">买了一套房</span>。</p>
+            <p class="source-ref">📎 来源：中文人物专栏 / WSJ</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · "没有新界面"背后藏着什么</div>
+        <div class="tweet-body">
+            <p>Shinn 反复强调"没有新界面"。用户不需要再装一个 App、学一套新交互——短信、电话、WhatsApp、iMessage 这些本来就在手边的入口就够了。</p>
+            <p>判断是：Agent 能不能"替你做"，关键不在模型，而在<span class="highlight">渠道</span>。它的护城河不是某个大模型，而是把"代理"塞进用户已经习惯的对话流这件事。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🏗️</span> 组织角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 估值路径：4 个月 50 倍</div>
+        <div class="tweet-body">
+            <p>2026 年 4 月，Conviction 的 Pranav Reddy 和 Greenoaks 的 Neil Mehta 给了第一笔种子资金，估值 <span class="highlight">5000 万美元</span>。</p>
+            <p>8 月初，Kleiner Perkins 合伙人 Mamoon Hamid 领投 7500 万美元 A 轮，估值升到 <span class="highlight">5 亿美元</span>。仅三周后，Index 和 Benchmark 把它推到 <span class="highlight">25 亿美元</span>。</p>
+            <p>四个月涨五十倍，产品还没公开发布，没有收入，连 App 都没有。</p>
+            <p class="source-ref">📎 来源：中文人物专栏 / Forbes</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 16 · 信任一次清零的代价</div>
+        <div class="tweet-body">
+            <p>25 亿美元的故事，在 B 轮关账前 48 小时差点翻车。8 月 24 日 TechCrunch 刊出调查，条款里的"永久且不可撤销"成为公共话题。</p>
+            <p>最尖锐的评价来自 Moxxie Ventures 创始人 Katie Jacobs Stanton：<span class="highlight">"一次未经授权的行动，就足以把这份信任清零。"</span></p>
+            <p class="source-ref">📎 来源：中文人物专栏 / TechCrunch</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 17 · 一个讽刺的闭环</div>
+        <div class="tweet-body">
+            <p>一个研究 Agent 可靠性的人，现在做出了一个能力越来越强的 Agent；而它刚刚爆红，最先暴露出来的，恰恰还是<span class="highlight">可靠性和信任问题</span>。</p>
+            <p>τ-bench 早就给出过答案：领先 Agent 完成不到一半任务。现在他要把这个研究结论变成消费级产品，同时面对规模化的信任挑战。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 18 · 这一代创业者的位置</div>
+        <div class="tweet-body">
+            <p>他是"把研究品味直接押上商业赌桌"的那一类人：23 岁，4 个月，估值 50 倍。</p>
+            <p>但这条路的下一道题已经不只在产品里，而在边界里——<span class="highlight">一个 23 岁的 CEO，能不能在"敢做"和"守住"之间找到平衡</span>。</p>
+            <p class="source-ref">📎 来源：中文人物专栏</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 02 · 2026-09-12<br>
+        来源：中文 AI 人物专栏 + WSJ / Forbes / TechCrunch 交叉核实<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>
