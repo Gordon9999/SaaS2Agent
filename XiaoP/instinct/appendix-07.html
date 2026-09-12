@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>附录 07 · 技术架构拆解：一台属于你的云电脑 | InsightView · Instinct</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider {
+    margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px;
+}
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title {
+    font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem;
+}
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) {
+    .container { padding: 1.5rem 1rem 3rem; }
+    .section-title { font-size: 1.05rem; }
+    .tweet .tweet-body { font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 07</div>
+        <h2>技术架构拆解：一台属于你的云电脑</h2>
+        <div class="source">来源：Vellum（Official Instinct Breakdown）· 2026 · 辅以官方产品公告与 τ-bench 公开材料</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 核心结论</div>
+        <div class="tweet-body">
+            <p>Instinct 的架构一句话说得完：<span class="highlight">给每个用户一台持久的云电脑</span>，让它像人一样去点网页、填表单、取验证码。</p>
+            <p>它不做模型选择，不给自托管，也不向你暴露执行细节。你交出去的是控制权，换回来的是<span class="highlight">跨服务端到端办完</span>。</p>
+            <p class="source-ref">📎 来源：Vellum · Official Instinct Breakdown</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 为什么这件事值得单独拆</div>
+        <div class="tweet-body">
+            <p>大多数 agent 产品的能力边界由<span class="highlight">API 覆盖度</span>决定：对方不开接口，Agent 就进不去。</p>
+            <p>Instinct 选的是另一条路——绕过 API，直接操作界面。这条路能覆盖的服务多得多，代价是稳定性、可审计性和责任归属全部变形。</p>
+            <p class="source-ref">📎 来源：Vellum · 2026</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🧩</span> 产品角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 架构第一条：持久云机</div>
+        <div class="tweet-body">
+            <p>据 Vellum 的拆解，Instinct 为每个用户提供一台<span class="highlight">持久的云端计算机</span>，带浏览器访问权限。</p>
+            <p>"持久"两个字是关键。它不是每次任务新开一个沙箱，而是一台长期存在的机器——登录状态、缓存、Cookie 都留在上面。</p>
+            <p class="source-ref">📎 来源：Vellum · Official Instinct Breakdown</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 架构第二条：缓存的用户凭证</div>
+        <div class="tweet-body">
+            <p>这台云电脑上缓存了用户的登录凭证，因此能<span class="highlight">替用户点击网页、填表单、取验证码</span>。</p>
+            <p>有测试者发现，它能从收件箱里取出注册验证码，自己完成一次订座。这类"最后一公里"的动作，正是纯 API 路线做不到的部分。</p>
+            <p class="source-ref">📎 来源：Vellum / TechCrunch · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 架构第三条：专有模型 + 人类操作方式</div>
+        <div class="tweet-body">
+            <p>Instinct 在自己的服务器上运行<span class="highlight">专有模型</span>，操作方式被训练成"像人一样使用手机和电脑"。</p>
+            <p>官方表述很直白：它被<span class="highlight">训练去使用手机和电脑</span>。这意味着它可以进入那些完全没有对外接口的服务。</p>
+            <p class="source-ref">📎 来源：Vellum / Instinct 官网 · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 代价：没有模型选择，也没有自托管</div>
+        <div class="tweet-body">
+            <p>这个架构的确定性代价写在明面上：<span class="highlight">没有模型选择选项，也没有自托管方案</span>。</p>
+            <p>用户既不能换一个更便宜的模型，也不能把 Agent 搬到自己机器上。对技术型用户来说，这两条是硬伤。</p>
+            <p class="source-ref">📎 来源：Vellum · Official Instinct Breakdown</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 它不只是起草，它真的发送</div>
+        <div class="tweet-body">
+            <p>Vellum 用一句话点出区别：它<span class="highlight">不只是起草邮件或建议预订——它会发送并预订</span>。</p>
+            <p>这一句把 Instinct 和过去两年的"AI 助手们"划开了。建议可以被忽略，行动不能。</p>
+            <p class="source-ref">📎 来源：Vellum · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 法律上的那一步</div>
+        <div class="tweet-body">
+            <p>根据服务条款，Instinct 被指定为用户的<span class="highlight">代理（agent）</span>，可以签订对用户具约束力的协议。</p>
+            <p>这在技术上不算新，但在消费级产品里是一次跃迁：Agent 的行动在法律上<span class="highlight">约束的是你</span>。</p>
+            <p class="source-ref">📎 来源：Instinct 服务条款 / CellCog · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 四条能力主线</div>
+        <div class="tweet-body">
+            <p>把近期的产品动作放在一起看，架构上是四条线：邮箱管沟通、密码管访问、位置管上下文、支付管交易。</p>
+            <p>四件套齐了，Agent 才能跨多步行动。<span class="highlight">少任何一条，它就会退回到"给建议"</span>。</p>
+            <p class="source-ref">📎 来源：TPS Report / Superintelligence News 汇总 · 2026-08～09</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 沟通层：专属邮箱</div>
+        <div class="tweet-body">
+            <p>2026 年 9 月 8 日，每个用户获得一个独立 Instinct 邮箱（<span class="highlight">mail.instinct.com</span>）。</p>
+            <p>Shinn 的说法是：这是让 Instinct <span class="highlight">拥有并运行自己账户的第一步</span>。代理商家的那封询价，从此发件人不是用户本人。</p>
+            <p class="source-ref">📎 来源：Noah Shinn @noahrshinn · 2026-09-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 访问层：1Password</div>
+        <div class="tweet-body">
+            <p>9 月初公布的 1Password 合作，让 Instinct 可以用用户保险库中的凭证<span class="highlight">登录已有账户</span>。</p>
+            <p>官方强调零知识加密，密码不以明文存储于 Instinct。这一条解决的是"能否进入"的问题。</p>
+            <p class="source-ref">📎 来源：TPS Report 汇总 · 2026-09</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 上下文层：位置共享</div>
+        <div class="tweet-body">
+            <p>位置共享让 Agent 知道用户当前与历史位置，可以推荐附近商家、规划路线。</p>
+            <p>演示里的问题很生活化："我把车停哪了"、"上个月去过哪家餐厅"。这是<span class="highlight">上下文层</span>，不是功能层。</p>
+            <p class="source-ref">📎 来源：TPS Report / Superintelligence News · 2026-09</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 交易层：Stripe</div>
+        <div class="tweet-body">
+            <p>8 月落地的 Stripe 合作，让 Agent 可预订行程、课程、预约，并<span class="highlight">直接完成支付</span>。</p>
+            <p>这一步把"推荐"变成"成交"。整个产品主张的商业闭环，系在这一层上。</p>
+            <p class="source-ref">📎 来源：TPS Report 汇总 · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 架构对可靠性的要求</div>
+        <div class="tweet-body">
+            <p>这套架构把可靠性要求推到一个很硬的位置：单次成功不够，得<span class="highlight">连续多次成功</span>。</p>
+            <p>τ-bench 的 pass^k 指标测的就是这件事。早期测试中，主流 Agent 在真实任务上单次完成率不到一半，要求连续成功 8 次时，成功率掉到 <span class="highlight">25% 左右</span>。</p>
+            <p class="source-ref">📎 来源：τ-bench 公开材料 · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 创始人为什么盯着这个数字</div>
+        <div class="tweet-body">
+            <p>Shinn 是 τ-bench 的共同作者，也是 Reflexion 的一作。后者让模型在失败后<span class="highlight">把错误写成一段话塞进记忆</span>，下一轮再试。</p>
+            <p>写"Agent 会怎么失败"的人来做产品，架构上的选择就不难理解了：他清楚地知道<span class="highlight">翻车概率是乘出来的</span>。</p>
+            <p class="source-ref">📎 来源：Reflexion（NeurIPS 2023）/ τ-bench 公开材料</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📦</span> 公司角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 16 · 横向打分的位置</div>
+        <div class="tweet-body">
+            <p>Vellum 给同类产品打了分：OpenClaw <span class="highlight">85</span>、Claude Cowork 82、Hermes 79、Instinct <span class="highlight">77</span>、ChatGPT Work 76。</p>
+            <p>Instinct 不是能力最强的那个。它的位置在"完全托管"这一端——能力排中间，省事排第一。</p>
+            <p class="source-ref">📎 来源：Vellum · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 17 · 最尖锐的那句评语</div>
+        <div class="tweet-body">
+            <p>Vellum 对 Instinct 的评价不留情面：媒体材料带有"永久、不可撤销"的许可，屏幕、键盘、位置都在范围内。</p>
+            <p>结论一句：<span class="highlight">它给不了你一个自己掌控的信任模型</span>。这句话比任何功能对比都更重要。</p>
+            <p class="source-ref">📎 来源：Vellum · 2026</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🏗️</span> 组织角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 18 · 一个架构决定，暴露了一整套取舍</div>
+        <div class="tweet-body">
+            <p>把云电脑、缓存凭证、专有模型、不开放自托管这四条放在一起看，会发现它们指向同一个方向：<span class="highlight">所有复杂性向内收，所有控制权向上收</span>。</p>
+            <p>这既是它一周能上线五个功能的工程原因，也是它隐私争议无法用"加个开关"解决的结构原因。</p>
+            <p class="source-ref">📎 来源：综合 Vellum / 官方公告 / 服务条款</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 19 · 接下来的观察点</div>
+        <div class="tweet-body">
+            <p>一、<span class="highlight">算力成本</span>：持久云电脑是常驻资源，用户越多，闲置越贵。</p>
+            <p>二、<span class="highlight">可审计性</span>：企业想用这类 Agent，第一件事就是要执行日志。</p>
+            <p>三、<span class="highlight">平台反制</span>：靠操作界面绕过 API 的路线，天然依赖对方不做检测与封堵。这三条里任何一条收紧，架构都要改。</p>
+            <p class="source-ref">📎 来源：综合 The Information / Vellum</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 07 · 2026-09-12<br>
+        来源：Vellum（Official Instinct Breakdown）+ 官方产品公告 + τ-bench 公开材料<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

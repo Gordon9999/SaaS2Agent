@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>附录 08 · 竞品格局：vs OpenClaw / Hermes / Grok Bot / ChatGPT Work | InsightView · Instinct</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider {
+    margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px;
+}
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title {
+    font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem;
+}
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) {
+    .container { padding: 1.5rem 1rem 3rem; }
+    .section-title { font-size: 1.05rem; }
+    .tweet .tweet-body { font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 08</div>
+        <h2>竞品格局：vs OpenClaw / Hermes / Grok Bot / ChatGPT Work</h2>
+        <div class="source">来源：Carly / Dervity / Vellum / Skift / The Information 综合 · 2026-08～09</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 核心结论</div>
+        <div class="tweet-body">
+            <p>这条赛道现在不是一条线，而是<span class="highlight">两种世界观</span>：一种把 Agent 放在你自己的机器上，一种把它放在厂商的云上。</p>
+            <p>Instinct 站在后者的极端——<span class="highlight">零配置、零模型选择、零自托管</span>。它换来的省事是真的，让出去的信任控制权也是真的。</p>
+            <p class="source-ref">📎 来源：Carly / Vellum 综合 · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 一个绰号说明了位置</div>
+        <div class="tweet-body">
+            <p>行业里给 Instinct 起的绰号是「<span class="highlight">普通人版 OpenClaw</span>」。</p>
+            <p>这个说法精准：能力谱系上它跟 OpenClaw 最接近，区别只在于——你不用自己装、自己配、自己守。</p>
+            <p class="source-ref">📎 来源：Carly · 2026</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🔍</span> 逐个拆</div>
+    <div class="tweet">
+        <div class="tweet-label">推 3 · OpenClaw：最常被拿来对比的那个</div>
+        <div class="tweet-body">
+            <p>OpenClaw 是<span class="highlight">开源、自托管</span>的控制平面，坐拥 <span class="highlight">5,400+ 技能</span>库。</p>
+            <p>模型、凭证、机器、护栏，全部由用户自己选。它代表的是"把控制权留在自己手里"那条路。</p>
+            <p class="source-ref">📎 来源：Carly / Dervity · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 用户在这个分叉上真的分裂了</div>
+        <div class="tweet-body">
+            <p>科技媒体人 <span class="highlight">David Goldberg</span> 称赞 Instinct 免除了 OpenClaw 那种配置负担。</p>
+            <p>另一位用户 <span class="highlight">Ben Badejo</span> 则明确拒绝 Instinct，坚持把 Agent 放在自己的电脑上。同一个产品，两种人给出完全相反的选择。</p>
+            <p class="source-ref">📎 来源：Carly / Dervity · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 5 · Grok Bot：大厂里最像竞品的</div>
+        <div class="tweet-body">
+            <p>xAI 的 Grok Bot 于 2026 年 8 月 11 日上线。每个用户一台<span class="highlight">持久 Linux 云 VM</span>，支持具名多 Agent 和移动 App。</p>
+            <p>还带例程触发器，可接 Slack、Git、Linear、Sentry、PagerDuty。<span class="highlight">$200/月起</span>，锁定 Grok 4.6。</p>
+            <p class="source-ref">📎 来源：Carly · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 一个关键的产品形态差异</div>
+        <div class="tweet-body">
+            <p>投资人 <span class="highlight">Anish Acharya</span> 的对比很到位：Grok 的具名 Agent 与多账户支持<span class="highlight">更适合知识工作</span>。</p>
+            <p>而 Instinct 是<span class="highlight">单一线程</span>——你不会有"市场 Agent"和"财务 Agent"，只有一个管你全部生活的助手。这是刻意的简化，也是能力的上限。</p>
+            <p class="source-ref">📎 来源：Carly · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 7 · Hermes：自我改进路线</div>
+        <div class="tweet-body">
+            <p>Nous Research 的 Hermes Agent 走的是<span class="highlight">单一自我改进 Agent</span>路线。</p>
+            <p>它的反思阶段会自动写技能文件（skill md），记忆检索更快。成本约 <span class="highlight">$40–65/月</span>（VPS + API 自付）。</p>
+            <p class="source-ref">📎 来源：Carly / Vellum · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 8 · ChatGPT Work：最稳的那一个</div>
+        <div class="tweet-body">
+            <p>ChatGPT Work 的配置是：连接源 + 文档 + 电脑使用 + 编码 + 长任务。</p>
+            <p>在 Acharya 的评注里，它是三者中<span class="highlight">最不激进、但界面与权衡最均衡</span>的。适合"人在旁边看着"的电脑使用场景。</p>
+            <p class="source-ref">📎 来源：Carly · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 9 · Pally：证据最薄的一注</div>
+        <div class="tweet-body">
+            <p>Pally 是同类被托管个人 Agent 里的另一注，但<span class="highlight">公开证据较薄</span>。</p>
+            <p>把它列进来是为了完整：这个赛道里已经堆了不少名字，能查到实测的却不多。</p>
+            <p class="source-ref">📎 来源：Carly · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 10 · Meta Muse：真正的重量级对手</div>
+        <div class="tweet-body">
+            <p>Meta 推出的 <span class="highlight">Muse</span> 是免费消费级助手。Meta 的判断是"代表用户把事情办成的 Agent"就是消费级 AI 的未来。</p>
+            <p>Muse 上线的时机不算好：Meta 刚就社交媒体消费者损害案达成 <span class="highlight">180 亿美元</span>多州和解。</p>
+            <p class="source-ref">📎 来源：AI Brew News / The Information · 2026-09</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 11 · Muse 真正的牌不是模型</div>
+        <div class="tweet-body">
+            <p>Foundation Capital 合伙人 <span class="highlight">Jaya Gupta</span> 判断：国际市场远未定局，但"<span class="highlight">Meta 最后很可能会赢</span>"。</p>
+            <p>理由是 Meta 有 <span class="highlight">WhatsApp</span>——在美国以外的许多市场，那是默认的通讯层。如果竞争本质是谁的 Agent 先住进对话流，这张牌极重。</p>
+            <p class="source-ref">📎 来源：The Information · 2026-09-11</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 12 · Skift 点出的第四个名字</div>
+        <div class="tweet-body">
+            <p>在旅游行业媒体的视角里，被并列的竞品是 Instinct、<span class="highlight">Hermes</span>、<span class="highlight">OpenClaw</span>、<span class="highlight">Tasklet</span>、<span class="highlight">GrokBot</span>。</p>
+            <p>这个名单和科技媒体的名单不完全重合，说明"同类"的边界本身还在漂移。</p>
+            <p class="source-ref">📎 来源：Skift · 2026-09-04</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 13 · Vellum 的打分表</div>
+        <div class="tweet-body">
+            <p>把能力横排打分：OpenClaw <span class="highlight">85</span>、Claude Cowork <span class="highlight">82</span>、Hermes <span class="highlight">79</span>、Instinct <span class="highlight">77</span>、ChatGPT Work <span class="highlight">76</span>。</p>
+            <p>Instinct 落在中游。它卖的不是最强能力，是<span class="highlight">最省事的入口</span>。</p>
+            <p class="source-ref">📎 来源：Vellum · 2026</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 核心观点</div>
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 一张表解决不了选择问题</div>
+        <div class="tweet-body">
+            <p>同一条赛道上，五个产品的定价从免费到 $200/月，能力从 76 分到 85 分，托管程度从全托管到全自托管。</p>
+            <p>这意味着<span class="highlight">横向比较几乎没有意义</span>——它们其实在回答不同的问题。</p>
+            <p class="source-ref">📎 来源：综合 Carly / Vellum / Skift</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 四个真正该问的问题</div>
+        <div class="tweet-body">
+            <p>有人总结出四个比任何评测都有用的测试：断开账户后会发生什么；存储的记忆能否被检查与删除；哪些外部行动需要审批；Agent 如何处理藏在邮件或网页里的指令。</p>
+            <p>这四个问题恰好<span class="highlight">就是 Instinct 引发反弹的原因</span>。它们同时也是企业采购这类产品时的尽职调查清单。</p>
+            <p class="source-ref">📎 来源：Carly · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 16 · 为什么"行动"比"建议"难</div>
+        <div class="tweet-body">
+            <p>产品能力上，五个玩家已经拉开差距；但真正卡住的是<span class="highlight">责任归属</span>。</p>
+            <p>一个给建议的聊天机器人出错，用户自己判断即可。一个会花钱、会发信、会签条款的 Agent 出错，成本和责任落在谁头上，目前没有标准答案。</p>
+            <p class="source-ref">📎 来源：Let's Data Science · 2026-09</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📦</span> 公司角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 17 · 收费结构的对比</div>
+        <div class="tweet-body">
+            <p>OpenClaw 免费但要自己付模型与机器成本；Hermes 约 <span class="highlight">$40–65/月</span>；Grok Bot <span class="highlight">$200/月起</span>；Instinct 目前<span class="highlight">免费</span>；ChatGPT Work 跟着订阅走。</p>
+            <p>Instinct 是唯一的"免费且全托管"——这也解释了它为什么必须解决<span class="highlight">算力账</span>：它把所有人的成本扛在自己账上。</p>
+            <p class="source-ref">📎 来源：Carly / The Information · 2026</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 18 · 定位的取舍很清楚</div>
+        <div class="tweet-body">
+            <p>Carly 的对比可以压成三行：要控制权，选 OpenClaw；要知识工作自动化，看 Grok Bot；要生活事务全托管，才是 Instinct。</p>
+            <p>而 Meta Muse 是唯一一条"<span class="highlight">免费 + 分发渠道自带</span>"的路——这让它成了 Instinct 最难缠的对手。</p>
+            <p class="source-ref">📎 来源：综合 Carly / The Information</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🏗️</span> 组织角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 19 · 下一个观察点</div>
+        <div class="tweet-body">
+            <p>一、OpenClaw 这类自托管方案会不会被"配置负担"逼出企业级托管版本。</p>
+            <p>二、Grok Bot 的 $200 定价能否撑住——它验证的是"个人 Agent 到底值不值订阅费"。</p>
+            <p>三、Muse 的 WhatsApp 分发什么时候真正发力。这三件事会决定 Instinct 现在的领先是<span class="highlight">时间差还是结构性优势</span>。</p>
+            <p class="source-ref">📎 来源：综合 Skift / The Information / Carly</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 08 · 2026-09-12<br>
+        来源：Carly / Dervity / Vellum / Skift / The Information 综合<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>

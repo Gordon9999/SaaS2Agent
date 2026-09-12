@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>附录 12 · Business Insider：我实测了 Instinct | InsightView · Instinct</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider {
+    margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px;
+}
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title {
+    font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem;
+}
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) {
+    .container { padding: 1.5rem 1rem 3rem; }
+    .section-title { font-size: 1.05rem; }
+    .tweet .tweet-body { font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 12</div>
+        <h2>Business Insider：我实测了 Instinct</h2>
+        <div class="source">来源：Business Insider（经 The Muslim Press 转载）· 2026-08 · 辅以早期用户自述</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📌</span> 一句话总结</div>
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 核心结论</div>
+        <div class="tweet-body">
+            <p>记者实测后的结论不是"能力最强"，而是"<span class="highlight">最不用折腾</span>"。</p>
+            <p>同类工具早就能做这些事，但只有 Instinct 住在短信里——没有安装、没有配置、没有要学的新界面。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 一句话点出差异</div>
+        <div class="tweet-body">
+            <p>原文的判断很直接：OpenClaw、Codex、Claude Code 已经能做其中一些事。</p>
+            <p>Instinct 的不同在于它<span class="highlight">住在你的短信里，没有要设置的，没有技术折腾</span>。同一件事，交付方式变了，用户群就变了。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🧩</span> 产品角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 实测清单：生活类</div>
+        <div class="tweet-body">
+            <p>记者的第一批任务是订一个生日小屋，再订一顿晚餐。</p>
+            <p>这类任务没什么技术含量，但它是<span class="highlight">高频、琐碎、又必须有人做</span>的事——正是"懒得自己弄"的典型场景。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 实测清单：采购类</div>
+        <div class="tweet-body">
+            <p>第二个例子是从 <span class="highlight">Costco 订乳清蛋白</span>。</p>
+            <p>采购的价值不在难度，在于它需要登录、比价、下单、填地址这一串动作。<span class="highlight">串联动作的次数</span>才是这类产品的真实成本。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 实测清单：最像"人"的那件事</div>
+        <div class="tweet-body">
+            <p>最值得一提的一项：给银行<span class="highlight">传真一份冷门文件</span>，以拿回滞纳金退款。</p>
+            <p>传真。这个动作暴露了 Instinct 路线的价值——它不需要对方开 API，只要这件事<span class="highlight">人能做，它就能做</span>。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 实测清单：规则类判断</div>
+        <div class="tweet-body">
+            <p>记者还让 Instinct 核实<span class="highlight">新牙医是否在自己的保险网络内</span>，确认后就预约。</p>
+            <p>这类任务的难点是它涉及多步核查与规则判断，不是简单填表。做对了才说明 Agent 真的在"办事"。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 7 · 实测清单：跟人打交道</div>
+        <div class="tweet-body">
+            <p>它还要跟保险公司的<span class="highlight">人工客服</span>打交道，以及回复邮件。</p>
+            <p>跟真人客服周旋是另一个量级的任务：需要等待、需要复述、需要来回。<span class="highlight">耐心成本被转移给了 Agent</span>，这是很实在的收益。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 8 · 实测清单：取消订阅</div>
+        <div class="tweet-body">
+            <p>记者让它取消了几个<span class="highlight">忘了的订阅</span>。</p>
+            <p>这件事的价值可以直接换算成钱：早期用户里有人靠这一项<span class="highlight">一次省下几百美元</span>。对产品来说，这是最容易证明 ROI 的一类任务。</p>
+            <p class="source-ref">📎 来源：Business Insider / 早期用户自述 · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 真实用户的用法分布</div>
+        <div class="tweet-body">
+            <p>零散的早期用户自述拼出了使用面：有人让它规划跨州自驾，有人承包了每周采购。</p>
+            <p>更极端的用例包括筹备婚礼（连定制周边一起），以及<span class="highlight">真的在平台上买了一套房</span>；年轻用户则拿它找出租公寓。</p>
+            <p class="source-ref">📎 来源：创始人档案 / WSJ · 2026-08～09</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 能力缺口要一起记住</div>
+        <div class="tweet-body">
+            <p>实测之外，公开可见的缺口也清楚：不支持 <span class="highlight">Todoist</span>；暂不支持接入自定义 <span class="highlight">MCP</span> 端点；无法直接代用户发短信。</p>
+            <p>前两条限制的是扩展性，第三条限制的是它作为"通讯代理"的完整度——这是平台层面的限制，不是产品选择。</p>
+            <p class="source-ref">📎 来源：官方材料 / The Information · 2026-09</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">💡</span> 核心观点</div>
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 那个绕不开的前提</div>
+        <div class="tweet-body">
+            <p>记者的提醒写得很坦白：它<span class="highlight">不可能在不通盘了解你生活的前提下替你跑生活</span>。</p>
+            <p>连接得越多，它越好用。这句话的另一面是：连接得越多，你交出去的东西也越多。产品价值与隐私代价是同一条曲线。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 12 · 条款层面的对应</div>
+        <div class="tweet-body">
+            <p>条款同时允许用交互数据<span class="highlight">训练模型</span>（修订后改为默认开启、可退出，且仅向未来生效）。</p>
+            <p>这意味着"更好用"和"被用于训练"在机制上是同一件事：用得越多，数据越多，产品越强，授权也越深。</p>
+            <p class="source-ref">📎 来源：Startup Fortune / QUASA · 2026-08-27</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 评测报道的价值在这里</div>
+        <div class="tweet-body">
+            <p>这类实测报道的价值不在打分，而在它列出的任务清单足够生活化——订餐、采购、传真、核保、取消订阅、回邮件。</p>
+            <p>正是这份清单说明了 Instinct 瞄准的不是"知识工作"，而是<span class="highlight">被忽略了几十年的个人行政</span>。</p>
+            <p class="source-ref">📎 来源：Business Insider · 2026-08</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📦</span> 公司角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 为什么这些琐事能撑起 25 亿估值</div>
+        <div class="tweet-body">
+            <p>订晚餐、退货、跟客服吵架——单件价值极低，但<span class="highlight">总量极大、频次极高</span>，而且从来没有被真正自动化过。</p>
+            <p>一旦有一个产品把这些事整体接过去，它拿到的不是一个功能位，而是<span class="highlight">用户日常生活的一个常驻入口</span>。</p>
+            <p class="source-ref">📎 来源：综合 WSJ / Skift</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🏗️</span> 组织角度</div>
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 从"能演示"到"能托付"的鸿沟</div>
+        <div class="tweet-body">
+            <p>清单里每一项都平淡无奇。但把它们连起来看，会发现要求的不是单次聪明，而是<span class="highlight">连续不出错</span>。</p>
+            <p>而实测之后紧跟着的，恰恰是隐私与安全争议。这说明这条鸿沟不是技术鸿沟——<span class="highlight">是从"能演示"到"能托付"的信任鸿沟</span>。</p>
+            <p class="source-ref">📎 来源：综合 Business Insider / TechCrunch</p>
+        </div>
+    </div>
+    <div class="tweet">
+        <div class="tweet-label">推 16 · 接下来的观察点</div>
+        <div class="tweet-body">
+            <p>一、这类生活任务的处理<span class="highlight">成功率</span>是否稳定——这是口碑能否持续的根基。</p>
+            <p>二、当 Meta Muse 这类免费产品追上来时，"更省事"这个卖点能否守住。</p>
+            <p>三、信任机制能否补上。产品能力已经证明，剩下的问题全在<span class="highlight">授权与责任</span>这一侧。</p>
+            <p class="source-ref">📎 来源：综合 Business Insider / The Information</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 12 · 2026-09-12<br>
+        来源：Business Insider（经 The Muslim Press 转载）· 2026-08<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>
