@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightView · Muse · 附录 09</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.back-link { font-size: 0.85rem; margin-bottom: 1.5rem; }
+.back-link a { color: #2563eb; text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+.appendix-divider { margin: 0 0 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 8px; }
+.appendix-divider .tag { font-size: 0.75rem; font-weight: 700; color: #16a34a; letter-spacing: 0.08em; }
+.appendix-divider h2 { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0.3rem 0; }
+.appendix-divider .source { font-size: 0.85rem; color: #64748b; }
+.section-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.4rem; }
+.section-title .emoji { font-size: 1.1rem; }
+.tweet { padding: 1.2rem 0 1.2rem 0.8rem; border-bottom: 1px solid #eef2f6; }
+.tweet:last-of-type { border-bottom: none; }
+.tweet .tweet-label { font-weight: 600; font-size: 0.9rem; color: #2563eb; margin-bottom: 0.2rem; }
+.tweet .tweet-body { font-size: 1rem; color: #1e293b; line-height: 1.8; }
+.tweet .tweet-body p { margin-bottom: 0.3rem; }
+.tweet .tweet-body p:last-child { margin-bottom: 0; }
+.highlight { color: #16a34a; font-weight: 500; }
+.source-ref { font-size: 0.78rem; color: #94a3b8; margin-top: 0.6rem; }
+.footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; }
+@media (max-width: 640px) { .container { padding: 1.5rem 1rem 3rem; } .appendix-divider h2 { font-size: 1.05rem; } .tweet .tweet-body { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="back-link"><a href="index.html">← 返回主报告</a></div>
+
+    <div class="appendix-divider">
+        <div class="tag">附录 09</div>
+        <h2>视频源补充：访谈原声 + The Verge 原始实测 + Spark 1.3 参数</h2>
+        <div class="source">来源：Sources 播客（Vox Media）/ The Verge / Meta 新闻稿 · 2026-09-13 补录</div>
+    </div>
+
+    <div class="section-title"><span class="emoji">🎙️</span> 访谈原声：编译版没有的细节</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 1 · 邮箱起步是只读</div>
+        <div class="tweet-body">
+            <p>访谈原文披露了权限的真实起步点：连接器默认<span class="highlight">最小权限</span>，邮箱接入第一天是只读。</p>
+            <p>要删邮件、发邮件，逐级提权。这比发布会上的「可控制」具体得多。</p>
+            <p class="source-ref">📎 来源：19 · TNW</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 2 · 网络安全「以攻为守」</div>
+        <div class="tweet-body">
+            <p>制衡原则被他推到网络安全：如果一个 AI 能黑进系统，答案是<span class="highlight">给每个人一个 AI</span> 来加固自己。</p>
+            <p>这是三原则里最激进的一条落地——安全来自武装用户，不来自封锁。</p>
+            <p class="source-ref">📎 来源：19</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 3 · 开源话术的收窄</div>
+        <div class="tweet-body">
+            <p>他也留了余地：It's not that everything we do is open source either。</p>
+            <p>Muse Spark 本身就是闭源模型。分发靠 Meta 产品，<span class="highlight">不再靠下载权重</span>。</p>
+            <p class="source-ref">📎 来源：19</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 4 · 定价改过一版</div>
+        <div class="tweet-body">
+            <p>8 月曾报道 $199.99 档，最终上线定价明显更低（$20/$100）。</p>
+            <p>一个月内腰斩再腰斩——免费 1 亿 token 加<span class="highlight">压价</span>，抢入口的决心写在价格表上。</p>
+            <p class="source-ref">📎 来源：19</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 5 · 广告系统的后门</div>
+        <div class="tweet-body">
+            <p>「对话不进广告系统」有例外：商家可以主动把 Muse <span class="highlight">接入 Meta 广告系统</span>。</p>
+            <p>这是收回算力成本的明线——商业化从对话侧切走，改从商家侧进。</p>
+            <p class="source-ref">📎 来源：19</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 6 · 数据中心的地缘话术</div>
+        <div class="tweet-body">
+            <p>回应对数据中心的反感，他先骂投机者：「圈块地盖个壳，转手倒卖给大厂」。</p>
+            <p>再摆事实：路易斯安那数据中心的税收，给当地<span class="highlight">每个老师发了 5 万美元奖金</span>。</p>
+            <p class="source-ref">📎 来源：19 · 36kr 全文</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 7 · Llama 4 反思完整版</div>
+        <div class="tweet-body">
+            <p>他承认错在把大模型当推荐系统做——以为靠成百上千工程师<span class="highlight">人海跑实验</span>就行。</p>
+            <p>修正动作：核心团队搬进他办公室四周。人才密度，不靠人数。</p>
+            <p class="source-ref">📎 来源：19 · 36kr 全文</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">📱</span> The Verge 原始实测：编译版删掉的三处</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 8 · Muse 自认 API 数据</div>
+        <div class="tweet-body">
+            <p>实测者问兴趣清单哪来的，Muse 原话：Instagram 界面里不显示这份清单——<span class="highlight">我是从账号 API 数据读的，它露出的比界面多</span>。</p>
+            <p>编译版没写这句。这是全文最硬的一句。</p>
+            <p class="source-ref">📎 来源：20 · The Verge</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 9 · 收货地址变定位器</div>
+        <div class="tweet-body">
+            <p>Feed 标签页推送了她老家所在州的新闻——来源是<span class="highlight">亚马逊订单的收货地址</span>。</p>
+            <p>用户没告诉过 Muse 自己在哪。它从购物数据里推出来的。</p>
+            <p class="source-ref">📎 来源：20</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 10 · 过滤的三套标准</div>
+        <div class="tweet-body">
+            <p>拒画「红裤子老鼠」和「红帽子蓝背带裤卡通人」，版权红线守住了。</p>
+            <p>但生成了一整场假苹果发布会，连图标都有——还把 App Store 幻觉成「Photos」。而「苹果 CEO」形象被拒。三个判断，<span class="highlight">三套标准</span>。</p>
+            <p class="source-ref">📎 来源：20</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 11 · 还能生成 AI 播客</div>
+        <div class="tweet-body">
+            <p>被编译版略过的能力：类 NotebookLM 的 <span class="highlight">AI 播客生成</span>、artifacts 交互网页。</p>
+            <p>Muse 的野心不止跑腿——还在做内容生成层的对位竞争。</p>
+            <p class="source-ref">📎 来源：20</p>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">⚙️</span> Spark 1.3 与信任存量</div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 12 · Spark 1.3 的账</div>
+        <div class="tweet-body">
+            <p>9 月 2 日发布，比 Muse 早一周：1M token 上下文，比上代<span class="highlight">少 20% 工具调用、省 25% token</span>。</p>
+            <p>为 7x24 后台运行设计的省法——持续 Agent 的成本账，在模型层就算好了。</p>
+            <p class="source-ref">📎 来源：21</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 13 · 期货与回退</div>
+        <div class="tweet-body">
+            <p>两个诚实信号：顶部推理模式因安全测试<span class="highlight">暂扣不发</span>；音频输入较上代小幅回退。</p>
+            <p>距完美还远，但敢承认回退的公司不多。</p>
+            <p class="source-ref">📎 来源：21</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 14 · 自述安全 vs 独立审计</div>
+        <div class="tweet-body">
+            <p>aitoolsreview 点破：整个安全架构是<span class="highlight">自述，未经独立审计</span>。</p>
+            <p>背景板还有不到两年前的 $180 亿儿童安全和解案。技术真诚，信用有赤字。</p>
+            <p class="source-ref">📎 来源：21</p>
+        </div>
+    </div>
+
+    <div class="tweet">
+        <div class="tweet-label">推 15 · 一句话收尾</div>
+        <div class="tweet-body">
+            <p>补完视频源，Muse 的画像更立体了：发布稿讲原则，访谈讲参数，实测讲真相。</p>
+            <p>最扎心的是那句 API 自白——<span class="highlight">它知道的，永远比你以为它知道的多</span>。</p>
+            <p class="source-ref">📎 来源：19, 20, 21</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        InsightView · 附录 09 · 2026-09-13<br>
+        来源：Sources 播客（Vox Media）/ TNW / 36kr 全文整理 / The Verge / Meta 新闻稿 / aitoolsreview<br>
+        本文由 AI 生成
+    </div>
+
+</div>
+</body>
+</html>
